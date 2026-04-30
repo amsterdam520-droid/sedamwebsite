@@ -1,6 +1,6 @@
 name: Deploy to GitHub Pages
 
-  on:
+  "on":
     push:
       branches: [main]
     workflow_dispatch:
@@ -21,3 +21,4 @@ name: Deploy to GitHub Pages
             publish_dir: .
             publish_branch: gh-pages
             exclude_assets:
+  '.github,cli,src,.claude,.factory,.shared,.superpowers,sedam-ads,node_modules,*.md,*.json,*.ts'
