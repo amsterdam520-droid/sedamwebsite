@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11553345216"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-11553345216');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sedam Müzik Merkezi — Avcılar, İstanbul</title>
+  <meta name="description" content="Sedam Müzik Merkezi — Avcılar'ın müzik okulu. Gitar, Piyano, Bağlama, Keman, Flüt ve Klarnet dersleri. 5 yaşından yetişkinlere.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --charcoal:   #1C1A18;
+      --amber:      #EF9F27;
+      --cream:      #F5F3EE;
+      --deep:       #0F0E0D;
+      --white:      #ffffff;
+      --ease:       cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      padding: 28px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s var(--ease), padding 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    #nav.scrolled {
+      background: rgba(28, 26, 24, 0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 18px 56px;
+      box-shadow: 0 1px 0 rgba(239, 159, 39, 0.18);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--amber);
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-logo-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--amber); }
+
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--amber);
+      color: var(--charcoal);
+      padding: 11px 26px;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--white); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile overlay menu */
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 14, 13, 0.98);
+      z-index: 199;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    #mobile-menu.open { display: flex; }
+    .mobile-link {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--white);
+      transition: color 0.2s;
+    }
+    .mobile-link:hover { color: var(--amber); }
+    .mobile-cta {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--amber);
+      color: var(--charcoal);
+      padding: 16px 44px;
+      border-radius: 3px;
+      margin-top: 8px;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn-amber {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--amber);
+      color: var(--charcoal);
+      padding: 16px 36px;
+      border-radius: 3px;
+      border: 2px solid var(--amber);
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-amber::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+      transform: skewX(-20deg);
+    }
+    .btn-amber:hover { background: transparent; color: var(--amber); }
+    .btn-amber:hover::after {
+      animation: btnShimmer 0.55s ease-out forwards;
+    }
+
+    .btn-outline-white {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 3px;
+      border: 2px solid rgba(255,255,255,0.55);
+      transition: border-color 0.25s, background 0.25s, color 0.25s;
+    }
+    .btn-outline-white:hover {
+      border-color: var(--amber);
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+
+    .btn-dark {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 18px 44px;
+      border-radius: 3px;
+      border: 2px solid var(--charcoal);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .btn-dark:hover {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--charcoal);
+    }
+
+    /* ============================================================
+       SECTION SHARED
+    ============================================================ */
+    .section-pad { padding: 128px 56px; }
+
+    .eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 28px;
+    }
+
+    .container { max-width: 1320px; margin: 0 auto; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    #hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.52);
+      z-index: 1;
+    }
+
+    /* Subtle grain on hero */
+    .hero-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fadeUp 1s 0.2s var(--ease) forwards;
+    }
+
+    .hero-heading { line-height: 1; margin-bottom: 36px; }
+
+    .hero-line-single {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(28px, 3.8vw, 58px);
+      color: var(--white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: slideInLeft 3s 0.3s var(--ease) forwards;
+    }
+
+    .hero-line-a {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(34px, 5vw, 68px);
+      color: var(--white);
+      opacity: 0;
+      animation: fadeUp 0.7s 0.4s var(--ease) forwards;
+    }
+    .hero-line-b {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(38px, 6vw, 82px);
+      color: var(--amber);
+      letter-spacing: -0.025em;
+      line-height: 1;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.55s var(--ease) forwards;
+    }
+    .hero-line-c {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(34px, 5vw, 68px);
+      color: var(--white);
+      opacity: 0;
+      animation: fadeUp 0.7s 0.7s var(--ease) forwards;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.26em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.85s var(--ease) forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-ctas.visible {
+      opacity: 1;
+      transition: opacity 2s ease;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 44px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeIn 1s 1.8s forwards;
+    }
+    .scroll-label {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .scroll-arrow {
+      width: 18px;
+      height: 18px;
+      border-right: 1.5px solid rgba(255,255,255,0.35);
+      border-bottom: 1.5px solid rgba(255,255,255,0.35);
+      transform: rotate(45deg);
+      animation: bounce 2s 2s infinite;
+    }
+
+    /* ============================================================
+       DERSLER
+    ============================================================ */
+    #dersler {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .dersler-header { margin-bottom: 72px; }
+
+    .dersler-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 6vw, 84px);
+      font-weight: 600;
+      line-height: 0.94;
+      color: var(--white);
+    }
+    .dersler-heading em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--amber);
+    }
+
+    .dersler-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .ders-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 44px 36px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 520px;
+      transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s;
+      cursor: default;
+    }
+    .ders-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12,11,10,0.92) 35%, rgba(12,11,10,0.6) 70%, rgba(12,11,10,0.35) 100%);
+      border-radius: 8px;
+      z-index: 0;
+      transition: opacity 0.3s var(--ease);
+    }
+    .ders-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s var(--ease);
+      z-index: 2;
+    }
+    .ders-card:hover {
+      border-color: rgba(239,159,39,0.5);
+      transform: translateY(-7px);
+    }
+    .ders-card:hover::before {
+      opacity: 0.75;
+    }
+    .ders-card:hover::after { transform: scaleX(1); }
+    .ders-card > * { position: relative; z-index: 1; }
+
+    .ders-icon {
+      width: 52px;
+      height: 52px;
+      color: var(--amber);
+      margin-bottom: 28px;
+    }
+    .ders-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .ders-age {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .ders-style {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      margin-top: 8px;
+    }
+
+    .ders-price {
+      margin-top: auto;
+      padding-top: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .ders-price sup {
+      font-size: 18px;
+      font-weight: 500;
+      vertical-align: super;
+      letter-spacing: 0;
+    }
+    .ders-price-label {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+    .ders-cta {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--amber);
+      color: var(--charcoal);
+      padding: 12px 28px;
+      border-radius: 3px;
+      border: 2px solid var(--amber);
+      transition: background 0.2s, color 0.2s;
+    }
+    .ders-cta:hover {
+      background: transparent;
+      color: var(--amber);
+    }
+
+    .ders-features {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      margin-top: 4px;
+    }
+    .ders-features li {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.72);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .ders-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .ders-card:hover .ders-features li {
+      color: rgba(255,255,255,0.92);
+    }
+
+    .ders-instrument-note {
+      font-size: 11px;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.22);
+      margin-top: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================================
+       NEDEN SEDAM
+    ============================================================ */
+    #neden { background: var(--cream); }
+
+    .neden-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 48px;
+      margin-bottom: 80px;
+    }
+    .neden-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 5.5vw, 80px);
+      font-weight: 600;
+      line-height: 0.94;
+      color: var(--charcoal);
+      flex: 1;
+    }
+    .neden-heading em { font-style: italic; color: var(--amber); }
+
+    .neden-desc {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(28,26,24,0.58);
+      max-width: 380px;
+    }
+
+    .neden-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(28,26,24,0.1);
+    }
+    .neden-col {
+      padding: 52px 40px 52px 0;
+      border-right: 1px solid rgba(28,26,24,0.1);
+    }
+    .neden-col:first-child { padding-left: 0; }
+    .neden-col:last-child { border-right: none; padding-right: 0; padding-left: 40px; }
+    .neden-col:nth-child(2) { padding-left: 40px; }
+
+    .neden-num {
+      width: 52px;
+      height: 52px;
+      color: rgba(239,159,39,0.55);
+      margin-bottom: 20px;
+    }
+    .neden-num svg { width: 52px; height: 52px; }
+    .neden-col-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .neden-col-body {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(28,26,24,0.6);
+    }
+
+    /* ============================================================
+       YORUMLAR
+    ============================================================ */
+    #yorumlar {
+      background: var(--cream);
+    }
+    .yorumlar-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .yorumlar-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 4vw, 60px);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--charcoal);
+      margin-top: 12px;
+    }
+    .yorumlar-heading em { font-style: italic; color: var(--amber); }
+    .yorumlar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .yorum-card {
+      background: var(--white);
+      border: 1px solid rgba(28,26,24,0.08);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .yorum-card:hover {
+      border-color: rgba(239,159,39,0.4);
+      box-shadow: 0 4px 24px rgba(239,159,39,0.08);
+    }
+    .yorum-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--amber);
+      font-size: 16px;
+    }
+    .yorum-text {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(28,26,24,0.75);
+      flex: 1;
+    }
+    .yorum-author {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .yorum-author::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--amber);
+      display: inline-block;
+    }
+    .yorum-card:nth-child(4),
+    .yorum-card:nth-child(5) {
+      grid-column: span 1;
+    }
+    .yorumlar-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+      max-width: calc(66.66% + 10px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================================
+       EĞİTMENLER
+    ============================================================ */
+    #egitmenler {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .egitmenler-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .egitmenler-left { position: sticky; top: 120px; }
+
+    .egitmenler-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 600;
+      line-height: 0.94;
+      color: var(--white);
+    }
+    .egitmenler-heading em { font-style: italic; color: var(--amber); }
+
+    .egitmenler-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .egitmen-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .egitmen-card:hover {
+      border-color: rgba(239,159,39,0.35);
+      background: rgba(239,159,39,0.04);
+    }
+
+    .egitmen-avatar-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 133%;
+      background: #2e2b28;
+      overflow: hidden;
+    }
+    .egitmen-initials {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: 0.05em;
+    }
+    .egitmen-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .egitmen-instrument {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+    .egitmen-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .egitmen-bio {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.45);
+    }
+    .egitmen-card-body {
+      padding: 20px 24px 24px;
+    }
+
+    /* ============================================================
+       SHOWCASE
+    ============================================================ */
+    #showcase {
+      background: var(--deep);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hex-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='104' viewBox='0 0 90 104'%3E%3Cpolygon points='45,4 86,26 86,70 45,92 4,70 4,26' fill='none' stroke='%23EF9F27' stroke-width='0.8'/%3E%3C/svg%3E");
+      background-size: 90px 104px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .showcase-inner { position: relative; z-index: 1; }
+
+    .showcase-top {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+
+    .showcase-heading {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 900;
+      font-size: clamp(64px, 7.5vw, 104px);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      color: var(--white);
+    }
+    .showcase-heading em {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(64px, 7.5vw, 104px);
+      color: var(--amber);
+      letter-spacing: 0;
+      line-height: 1;
+    }
+
+    .showcase-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 36px;
+    }
+    .showcase-text {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .showcase-photos {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr 1fr;
+      gap: 20px;
+      align-items: end;
+    }
+
+    .showcase-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #252320;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .showcase-photo:nth-child(1) { height: 540px; }
+    .showcase-photo:nth-child(2) { height: 360px; }
+    .showcase-photo:nth-child(3) { height: 460px; }
+
+    .showcase-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.18);
+    }
+    .photo-placeholder svg { width: 36px; height: 36px; }
+    .photo-placeholder span {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       İLETİŞİM
+    ============================================================ */
+    #iletisim { background: var(--cream); }
+
+    .iletisim-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+    }
+
+    .iletisim-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 5vw, 80px);
+      font-weight: 600;
+      line-height: 0.94;
+      color: var(--charcoal);
+      margin-bottom: 56px;
+    }
+    .iletisim-heading em { font-style: italic; color: var(--amber); }
+
+    .iletisim-items { display: flex; flex-direction: column; gap: 28px; margin-bottom: 44px; }
+
+    .iletisim-item { display: flex; align-items: flex-start; gap: 18px; }
+    .iletisim-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(239,159,39,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+    .iletisim-icon svg { width: 18px; height: 18px; }
+    .iletisim-item-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(28,26,24,0.4);
+      margin-bottom: 5px;
+    }
+    .iletisim-item-value {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+
+    .map-box {
+      background: rgba(28,26,24,0.06);
+      border: 1px solid rgba(28,26,24,0.1);
+      border-radius: 12px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-box span {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(28,26,24,0.28);
+    }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+    .form-field label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(28,26,24,0.45);
+    }
+    .form-field input,
+    .form-field textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--charcoal);
+      background: rgba(28,26,24,0.045);
+      border: 1px solid rgba(28,26,24,0.12);
+      border-radius: 6px;
+      padding: 16px 20px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      resize: none;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(28,26,24,0.3); }
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--amber);
+      background: rgba(239,159,39,0.04);
+    }
+    .form-field textarea { min-height: 144px; }
+
+    .form-success {
+      display: none;
+      background: rgba(239,159,39,0.08);
+      border: 1px solid rgba(239,159,39,0.4);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+    .form-success.show { display: block; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--charcoal);
+      padding: 72px 56px 48px;
+    }
+    .footer-inner { max-width: 1320px; margin: 0 auto; }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 44px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--amber);
+    }
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-socials { display: flex; gap: 12px; }
+    .footer-social {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.45);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-social:hover { border-color: var(--amber); color: var(--amber); }
+    .footer-social svg { width: 17px; height: 17px; }
+
+    .footer-copy {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       WHATSAPP BUTTON
+    ============================================================ */
+    #whatsapp-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 300;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s var(--ease), box-shadow 0.2s;
+      animation: waPulse 4s 4s infinite;
+      text-decoration: none;
+    }
+    #whatsapp-btn::before {
+      content: 'Hızlı bilgi al';
+      position: absolute;
+      right: 64px;
+      background: var(--charcoal);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    #whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.55);
+      animation: none;
+    }
+    #whatsapp-btn:hover::before { opacity: 1; }
+    #whatsapp-btn svg { width: 28px; height: 28px; }
+
+    /* ============================================================
+       KEYFRAMES
+    ============================================================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translate(0,0); }
+      50%       { transform: rotate(45deg) translate(4px, 4px); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-72px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes btnShimmer {
+      from { left: -100%; }
+      to   { left: 150%; }
+    }
+    @keyframes waPulse {
+      0%, 80%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
+      90% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0.12); }
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+    ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .hero-line-single, .scroll-indicator {
+        opacity: 1; animation: none;
+      }
+    }
+
+    /* ============================================================
+       RESPONSIVE — TABLET
+    ============================================================ */
+    @media (max-width: 1024px) {
+      #nav { padding: 20px 32px; }
+      #nav.scrolled { padding: 14px 32px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .section-pad { padding: 88px 32px; }
+
+      .dersler-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .neden-top { flex-direction: column; align-items: flex-start; }
+      .neden-cols { grid-template-columns: 1fr; border-top: none; }
+      .neden-col {
+        padding: 36px 0 !important;
+        border-right: none;
+        border-top: 1px solid rgba(28,26,24,0.1);
+      }
+
+      .egitmenler-left { position: static; }
+
+      .yorumlar-grid { grid-template-columns: 1fr 1fr; }
+      .yorumlar-grid-bottom { grid-template-columns: 1fr 1fr; max-width: 100%; }
+
+      .showcase-top { grid-template-columns: 1fr; gap: 44px; }
+      .showcase-photos { grid-template-columns: 1fr 1fr; }
+      .showcase-photo:nth-child(1) { height: 280px; }
+      .showcase-photo:nth-child(2) { height: 280px; }
+      .showcase-photo:nth-child(3) { height: 280px; grid-column: span 2; }
+
+      .iletisim-inner { grid-template-columns: 1fr; gap: 64px; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE
+    ============================================================ */
+    @media (max-width: 640px) {
+      #nav { padding: 16px 24px; }
+      .section-pad { padding: 72px 24px; }
+      footer { padding: 56px 24px 40px; }
+
+      .dersler-grid { grid-template-columns: 1fr; }
+
+      .showcase-photos { grid-template-columns: 1fr; }
+      .showcase-photo:nth-child(1) { height: 260px; }
+      .showcase-photo:nth-child(2) { height: 260px; display: block; }
+      .showcase-photo:nth-child(3) { height: 260px; display: block; grid-column: auto; }
+
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .egitmenler-cards { grid-template-columns: 1fr; }
+      .yorumlar-grid { grid-template-columns: 1fr; }
+      .yorumlar-grid-bottom { grid-template-columns: 1fr; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="nav" role="navigation" aria-label="Ana navigasyon">
+    <a href="#" class="nav-logo" aria-label="Sedam Müzik Merkezi - Ana sayfa">
+      <img src="logo.png" alt="Sedam Müzik Merkezi logosu"
+        onerror="this.style.display='none'">
+      <span class="nav-logo-text">♪ Sedam</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#dersler">Dersler & Fiyatlar</a></li>
+      <li><a href="#neden">Neden Sedam?</a></li>
+      <li><a href="#egitmenler">Eğitmenler</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+
+    <a href="#iletisim" class="nav-cta">Deneme Dersi</a>
+
+    <button class="nav-hamburger" id="hamburger"
+      aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="dialog" aria-label="Mobil menü" aria-modal="true">
+    <a href="#dersler" class="mobile-link" onclick="closeMenu()">Dersler & Fiyatlar</a>
+    <a href="#neden" class="mobile-link" onclick="closeMenu()">Neden Sedam?</a>
+    <a href="#egitmenler" class="mobile-link" onclick="closeMenu()">Eğitmenler</a>
+    <a href="#iletisim" class="mobile-cta btn-amber" onclick="closeMenu()">Deneme Dersi Al</a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         1. HERO
+    ============================================================ -->
+    <section id="hero" aria-label="Hero bölümü">
+      <video id="hero-video" src="hero-video.mp4" autoplay muted loop playsinline
+        aria-hidden="true" tabindex="-1"></video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-ctas" id="hero-ctas">
+          <a href="#iletisim" class="btn-outline-white">Ücretsiz Deneme Dersi</a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-label">Keşfet</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. DERSLER
+    ============================================================ -->
+    <section id="dersler" class="section-pad" aria-label="Dersler">
+      <div class="container">
+        <div class="dersler-header">
+          <span class="eyebrow">Eğitim & Fiyatlar</span>
+          <h2 class="dersler-heading reveal">
+            Hangi yolculuğa<br>
+            <em>çıkmak istersin?</em>
+          </h2>
+        </div>
+
+        <div class="dersler-grid">
+
+          <!-- Gitar -->
+          <article class="ders-card reveal" style="background-image:url('img/ders-gitar.jpg');background-size:cover;background-position:center;">
+            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 47C17.5 47 10 42 10 36C10 31.5 13.5 28 18 26.5C15.5 25 13 22.5 13 19.5C13 15 18.5 12 26 12C33.5 12 39 15 39 19.5C39 22.5 36.5 25 34 26.5C38.5 28 42 31.5 42 36C42 42 34.5 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="26" cy="33" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="21.5" y="40.5" width="9" height="1.8" rx="0.9" fill="currentColor" opacity="0.55"/>
+              <rect x="23" y="3" width="6" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="23" y1="7" x2="29" y2="7" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+              <line x1="23" y1="10" x2="29" y2="10" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+              <rect x="21" y="3" width="10" height="3" rx="1" stroke="currentColor" stroke-width="1"/>
+              <circle cx="22" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
+              <circle cx="30" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
+              <line x1="24.5" y1="7" x2="24.5" y2="41" stroke="currentColor" stroke-width="0.7" opacity="0.28"/>
+              <line x1="26" y1="7" x2="26" y2="41" stroke="currentColor" stroke-width="0.7" opacity="0.28"/>
+              <line x1="27.5" y1="7" x2="27.5" y2="41" stroke="currentColor" stroke-width="0.7" opacity="0.28"/>
+            </svg>
+            <h3 class="ders-name">Gitar</h3>
+            <p class="ders-age">6 yaş ve üzeri</p>
+            <p class="ders-style">Akustik · Klasik · Elektro</p>
+            <p class="ders-price"><sup>₺</sup>5500</p>
+            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+            <ul class="ders-features">
+              <li>Birebir Özel Ders</li>
+              <li>Ücretsiz Deneme Dersi</li>
+              <li>Nota &amp; Materyal Dahil</li>
+              <li>Esnek Ders Saati Seçimi</li>
+              <li>Merkezde Serbest Çalışma İmkanı</li>
+            </ul>
+            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
+            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
+          </article>
+
+          <!-- Piyano -->
+          <article class="ders-card reveal" style="transition-delay:80ms;background-image:url('img/ders-piyano.jpg');background-size:cover;background-position:center;">
+            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="3" y="16" width="46" height="30" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="9.6" y1="16" x2="9.6" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="16.1" y1="16" x2="16.1" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="22.7" y1="16" x2="22.7" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="29.3" y1="16" x2="29.3" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="35.9" y1="16" x2="35.9" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="42.4" y1="16" x2="42.4" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <rect x="7" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="13.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="27" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="33.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="40" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="3" y="10" width="46" height="7" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.05"/>
+            </svg>
+            <h3 class="ders-name">Piyano</h3>
+            <p class="ders-age">5 yaş ve üzeri</p>
+            <p class="ders-style">Klasik · Pop · Caz</p>
+            <p class="ders-price"><sup>₺</sup>5500</p>
+            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+            <ul class="ders-features">
+              <li>Birebir Özel Ders</li>
+              <li>Ücretsiz Deneme Dersi</li>
+              <li>Nota &amp; Materyal Dahil</li>
+              <li>Esnek Ders Saati Seçimi</li>
+              <li>Merkezde Serbest Çalışma İmkanı</li>
+            </ul>
+            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
+            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
+          </article>
+
+          <!-- Bağlama -->
+          <article class="ders-card reveal" style="transition-delay:160ms;background-image:url('img/ders-baglama.jpg');background-size:cover;background-position:center;">
+            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="19" cy="38" rx="14" ry="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M29 30L45 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M27.5 31L43.5 7" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
+              <line x1="31" y1="26.5" x2="36.5" y2="20.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+              <line x1="33" y1="23.5" x2="38.5" y2="17.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+              <line x1="35.5" y1="20" x2="41" y2="14" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+              <path d="M43.5 7C43.5 7 46 5 47 7C48 9 46 11 43.5 7Z" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.2"/>
+              <circle cx="16" cy="37" r="3" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <path d="M9 35 Q19 29 29 34" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+            </svg>
+            <h3 class="ders-name">Bağlama</h3>
+            <p class="ders-age">8 yaş ve üzeri</p>
+            <p class="ders-style">Türk Halk Müziği · Saz</p>
+            <p class="ders-price"><sup>₺</sup>5500</p>
+            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+            <ul class="ders-features">
+              <li>Birebir Özel Ders</li>
+              <li>Ücretsiz Deneme Dersi</li>
+              <li>Nota &amp; Materyal Dahil</li>
+              <li>Esnek Ders Saati Seçimi</li>
+              <li>Merkezde Serbest Çalışma İmkanı</li>
+            </ul>
+            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
+            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
+          </article>
+
+          <!-- Keman -->
+          <article class="ders-card reveal" style="transition-delay:240ms;background-image:url('img/ders-keman.jpg');background-size:cover;background-position:center;">
+            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 47C20 47 15 43.5 15 39C15 35.5 17.5 33 21 31.5C18.5 30 16 27.5 16 24.5C16 20 19 17 26 17C33 17 36 20 36 24.5C36 27.5 33.5 30 31 31.5C34.5 33 37 35.5 37 39C37 43.5 32 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20.5 25.5Q19 27 19 28.5Q19 30 20.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="20.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
+              <circle cx="20.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
+              <path d="M31.5 25.5Q33 27 33 28.5Q33 30 31.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="31.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
+              <circle cx="31.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
+              <path d="M21.5 32L24 31H28L30.5 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22.5 44.5H29.5L30.5 43H21.5L22.5 44.5Z" fill="currentColor" opacity="0.35"/>
+              <path d="M26 17C26 17 26 13 28 12C30 11 30 14 27 17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+              <line x1="25" y1="13" x2="24.5" y2="43" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
+              <line x1="26.5" y1="13" x2="26.5" y2="43" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
+              <line x1="28" y1="13" x2="27.5" y2="43" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
+            </svg>
+            <h3 class="ders-name">Keman</h3>
+            <p class="ders-age">5 yaş ve üzeri</p>
+            <p class="ders-style">Klasik · Orkestra</p>
+            <p class="ders-price"><sup>₺</sup>5500</p>
+            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+            <ul class="ders-features">
+              <li>Birebir Özel Ders</li>
+              <li>Ücretsiz Deneme Dersi</li>
+              <li>Nota &amp; Materyal Dahil</li>
+              <li>Esnek Ders Saati Seçimi</li>
+              <li>Merkezde Serbest Çalışma İmkanı</li>
+            </ul>
+            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
+            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
+          </article>
+
+          <!-- Flüt -->
+          <article class="ders-card reveal" style="transition-delay:320ms;background-image:url('img/ders-flut.jpg');background-size:cover;background-position:center;">
+            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 26H47" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="7" cy="26" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="46" y1="21" x2="46" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="14" cy="26" rx="2.2" ry="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="21" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <circle cx="27" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <circle cx="32" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <circle cx="37" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <line x1="21" y1="21.5" x2="21" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+              <line x1="27" y1="21.5" x2="27" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+              <line x1="32" y1="21.5" x2="32" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+              <line x1="37" y1="21.5" x2="37" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+            </svg>
+            <h3 class="ders-name">Flüt</h3>
+            <p class="ders-age">7 yaş ve üzeri</p>
+            <p class="ders-style">Klasik · Oda Müziği</p>
+            <p class="ders-price"><sup>₺</sup>6500</p>
+            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+            <ul class="ders-features">
+              <li>Birebir Özel Ders</li>
+              <li>Ücretsiz Deneme Dersi</li>
+              <li>Nota &amp; Materyal Dahil</li>
+              <li>Esnek Ders Saati Seçimi</li>
+              <li>Merkezde Serbest Çalışma İmkanı</li>
+            </ul>
+            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
+            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
+          </article>
+
+          <!-- Klarnet -->
+          <article class="ders-card reveal" style="transition-delay:400ms;background-image:url('img/ders-klarnet.jpg');background-size:cover;background-position:center;">
+            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 9V43" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M21.5 43C21.5 43 20 46 20 48H32C32 48 30.5 46 30.5 43" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 9C24.5 7.5 24.5 6 25.5 5C26.5 4 27.5 5 27.5 6C27.5 7 27 8.5 26 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="24" y1="13" x2="28" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="17" x2="28" y2="17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="26" cy="21" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <circle cx="26" cy="27" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <circle cx="26" cy="33" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <circle cx="26" cy="39" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <path d="M23.5 23L21 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+              <path d="M23.5 29L21 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+            </svg>
+            <h3 class="ders-name">Klarnet</h3>
+            <p class="ders-age">8 yaş ve üzeri</p>
+            <p class="ders-style">Klasik · Caz</p>
+            <p class="ders-price"><sup>₺</sup>6500</p>
+            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+            <ul class="ders-features">
+              <li>Birebir Özel Ders</li>
+              <li>Ücretsiz Deneme Dersi</li>
+              <li>Nota &amp; Materyal Dahil</li>
+              <li>Esnek Ders Saati Seçimi</li>
+              <li>Merkezde Serbest Çalışma İmkanı</li>
+            </ul>
+            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
+            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. NEDEN SEDAM?
+    ============================================================ -->
+    <section id="neden" class="section-pad" aria-label="Neden Sedam?">
+      <div class="container">
+        <div class="neden-top reveal">
+          <h2 class="neden-heading">
+            Neden<br><em>Sedam?</em>
+          </h2>
+          <p class="neden-desc">
+            Avcılar'ın kalbinde, her yaştan öğrenciye
+            özel müzik eğitimi sunuyoruz.
+          </p>
+        </div>
+
+        <div class="neden-cols">
+          <div class="neden-col reveal">
+            <div class="neden-num">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20 26L14 46L20 42L26 48L32 42L38 46L32 26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="26" cy="19" r="13" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M26 11L28.2 17.2H35L29.4 21L31.6 27.2L26 23.4L20.4 27.2L22.6 21L17 17.2H23.8Z" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3 class="neden-col-title">Uzman Eğitmenler</h3>
+            <p class="neden-col-body">Konservatuvar mezunu, sahne deneyimli eğitmenlerle birebir çalışırsınız. Her ders, sizin hızınıza ve hedeflerinize göre özel olarak şekillendirilir.</p>
+          </div>
+          <div class="neden-col reveal" style="transition-delay:80ms">
+            <div class="neden-num">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="32" cy="13" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M24 47V31C24 28 27 26 32 26C37 26 40 28 40 31V47" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="15" cy="18" r="4" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 47V33C9 31 11.5 30 15 30C18.5 30 21 31 21 33V47" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="neden-col-title">Her Yaşa Uygun</h3>
+            <p class="neden-col-body">5 yaşındaki meraklıdan yetişkin başlayanlara kadar herkese özel müfredat hazırlanır. Müzik öğrenmek için asla geç kalmış değilsiniz.</p>
+          </div>
+          <div class="neden-col reveal" style="transition-delay:160ms">
+            <div class="neden-num">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M26 5C17.7 5 11 11.7 11 20C11 30.5 26 48 26 48C26 48 41 30.5 41 20C41 11.7 34.3 5 26 5Z" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="26" cy="20" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="neden-col-title">Merkezî Konum</h3>
+            <p class="neden-col-body">Avcılar'ın kalbinde, ulaşması kolay bir müzik yuvası. Aileler güvenle bırakır, öğrenciler her hafta severek geri döner.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. YORUMLAR
+    ============================================================ -->
+    <section id="yorumlar" class="section-pad" aria-label="Öğrenci Yorumları">
+      <div class="container">
+        <div class="yorumlar-header reveal">
+          <span class="eyebrow">Ne Diyorlar?</span>
+          <h2 class="yorumlar-heading">Öğrencilerimizden<br><em>Gerçek Yorumlar</em></h2>
+        </div>
+        <div class="yorumlar-grid">
+          <article class="yorum-card reveal">
+            <div class="yorum-stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="yorum-text">"Eğitmenlerim çok faydalı, samimi ve güler yüzlü. Derslerde hem teknik hem de motivasyon anlamında destek oluyorlar. Kısa sürede büyük farklar hissettim. Gerçekten müziği sevmeye başladım."</p>
+            <span class="yorum-author">Selin Şenozy</span>
+          </article>
+          <article class="yorum-card reveal" style="transition-delay:60ms">
+            <div class="yorum-stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="yorum-text">"Bir aydır keman dersi alıyorum. Küçüklüğümden beri hayalim olan kemanı öğrenmede hocam çok yardımcı oluyor. Ortam çok güzel, hocalar çok ilgili. İyi ki karşılaştık!"</p>
+            <span class="yorum-author">Sinem Ekmen</span>
+          </article>
+          <article class="yorum-card reveal" style="transition-delay:120ms">
+            <div class="yorum-stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="yorum-text">"Bağlama öğrenmek isteyen herkese tavsiye ederim. Hocam hem çok ilgili hem de sabırlı. Dersler verimli ve keyifli geçiyor. Kısa sürede büyük gelişme kaydettim. Gerçekten doğru adres."</p>
+            <span class="yorum-author">Can Baron</span>
+          </article>
+        </div>
+        <div class="yorumlar-grid-bottom">
+          <article class="yorum-card reveal" style="transition-delay:60ms">
+            <div class="yorum-stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="yorum-text">"4-5 aydır Seda hoca ile keman dersi alıyorum. Güler yüzlü ve eğlenceli kişiliği sayesinde her hafta hevesle derslere gidiyorum. Eğlenerek öğrenmek için kesinlikle bu adres."</p>
+            <span class="yorum-author">Söğra İlme</span>
+          </article>
+          <article class="yorum-card reveal" style="transition-delay:120ms">
+            <div class="yorum-stars" aria-label="5 yıldız">★★★★★</div>
+            <p class="yorum-text">"Seda hocam güler yüzlü, anlayışlı ve deneyimli. Öğrenme konusunda çok yardımcı oluyor. Güzel vakit geçiriyoruz, ortam da çok iyi. Tavsiye ederim."</p>
+            <span class="yorum-author">Abdullah Yaman</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. FİYATLAR — removed, merged into #dersler above
+    ============================================================ -->
+    <section id="fiyatlar" class="section-pad" aria-label="Fiyatlar" style="display:none;">
+      <div class="container">
+        <div class="fiyatlar-header reveal">
+          <span class="eyebrow">Ücretlendirme</span>
+          <h2 class="fiyatlar-heading">
+            Müziğe adım atmak<br>
+            <em>çok daha kolay.</em>
+          </h2>
+        </div>
+
+        <div class="fiyatlar-grid">
+
+          <!-- Gitar -->
+          <article class="fiyat-card reveal">
+            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 47C17.5 47 10 42 10 36C10 31.5 13.5 28 18 26.5C15.5 25 13 22.5 13 19.5C13 15 18.5 12 26 12C33.5 12 39 15 39 19.5C39 22.5 36.5 25 34 26.5C38.5 28 42 31.5 42 36C42 42 34.5 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="26" cy="33" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="21.5" y="40.5" width="9" height="1.8" rx="0.9" fill="currentColor" opacity="0.55"/>
+              <rect x="23" y="3" width="6" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="23" y1="7" x2="29" y2="7" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+              <line x1="23" y1="10" x2="29" y2="10" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+              <rect x="21" y="3" width="10" height="3" rx="1" stroke="currentColor" stroke-width="1"/>
+              <circle cx="22" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
+              <circle cx="30" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
+            </svg>
+            <h3 class="fiyat-enstru">Gitar</h3>
+            <p class="fiyat-desc">Akustik · Klasik · Elektro</p>
+            <p class="fiyat-price"><sup>₺</sup>5500</p>
+            <p class="fiyat-price-label">aylık · 4 ders</p>
+            <ul class="fiyat-includes">
+              <li>6 yaş ve üzeri</li>
+              <li>45 dakika bireysel ders</li>
+              <li>Deneme dersi ücretsiz</li>
+            </ul>
+            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
+          </article>
+
+          <!-- Piyano -->
+          <article class="fiyat-card reveal" style="transition-delay:80ms;">
+            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="3" y="16" width="46" height="30" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="9.6" y1="16" x2="9.6" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="16.1" y1="16" x2="16.1" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="22.7" y1="16" x2="22.7" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="29.3" y1="16" x2="29.3" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="35.9" y1="16" x2="35.9" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <line x1="42.4" y1="16" x2="42.4" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <rect x="7" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="13.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="27" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="33.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="40" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
+              <rect x="3" y="10" width="46" height="7" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.05"/>
+            </svg>
+            <h3 class="fiyat-enstru">Piyano</h3>
+            <p class="fiyat-desc">Klasik · Pop · Caz</p>
+            <p class="fiyat-price"><sup>₺</sup>5500</p>
+            <p class="fiyat-price-label">aylık · 4 ders</p>
+            <ul class="fiyat-includes">
+              <li>5 yaş ve üzeri</li>
+              <li>45 dakika bireysel ders</li>
+              <li>Deneme dersi ücretsiz</li>
+            </ul>
+            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
+          </article>
+
+          <!-- Bağlama -->
+          <article class="fiyat-card reveal" style="transition-delay:160ms;">
+            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="19" cy="38" rx="14" ry="11" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M29 30L45 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <path d="M27.5 31L43.5 7" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
+              <line x1="31" y1="26.5" x2="36.5" y2="20.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+              <line x1="33" y1="23.5" x2="38.5" y2="17.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+              <line x1="35.5" y1="20" x2="41" y2="14" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+              <path d="M43.5 7C43.5 7 46 5 47 7C48 9 46 11 43.5 7Z" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.2"/>
+              <circle cx="16" cy="37" r="3" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+              <path d="M9 35 Q19 29 29 34" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+            </svg>
+            <h3 class="fiyat-enstru">Bağlama</h3>
+            <p class="fiyat-desc">Türk Halk Müziği · Saz</p>
+            <p class="fiyat-price"><sup>₺</sup>5500</p>
+            <p class="fiyat-price-label">aylık · 4 ders</p>
+            <ul class="fiyat-includes">
+              <li>8 yaş ve üzeri</li>
+              <li>45 dakika bireysel ders</li>
+              <li>Deneme dersi ücretsiz</li>
+            </ul>
+            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
+          </article>
+
+          <!-- Keman -->
+          <article class="fiyat-card reveal" style="transition-delay:240ms;">
+            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 47C20 47 15 43.5 15 39C15 35.5 17.5 33 21 31.5C18.5 30 16 27.5 16 24.5C16 20 19 17 26 17C33 17 36 20 36 24.5C36 27.5 33.5 30 31 31.5C34.5 33 37 35.5 37 39C37 43.5 32 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20.5 25.5Q19 27 19 28.5Q19 30 20.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="20.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
+              <circle cx="20.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
+              <path d="M31.5 25.5Q33 27 33 28.5Q33 30 31.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="31.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
+              <circle cx="31.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
+              <path d="M21.5 32L24 31H28L30.5 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22.5 44.5H29.5L30.5 43H21.5L22.5 44.5Z" fill="currentColor" opacity="0.35"/>
+              <path d="M26 17C26 17 26 13 28 12C30 11 30 14 27 17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+            <h3 class="fiyat-enstru">Keman</h3>
+            <p class="fiyat-desc">Klasik · Orkestra</p>
+            <p class="fiyat-price"><sup>₺</sup>5500</p>
+            <p class="fiyat-price-label">aylık · 4 ders</p>
+            <ul class="fiyat-includes">
+              <li>5 yaş ve üzeri</li>
+              <li>45 dakika bireysel ders</li>
+              <li>Deneme dersi ücretsiz</li>
+            </ul>
+            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
+          </article>
+
+          <!-- Flüt -->
+          <article class="fiyat-card reveal" style="transition-delay:320ms;">
+            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 26H47" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="7" cy="26" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="46" y1="21" x2="46" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="14" cy="26" rx="2.2" ry="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="21" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <circle cx="27" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <circle cx="32" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+              <circle cx="37" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <h3 class="fiyat-enstru">Flüt</h3>
+            <p class="fiyat-desc">Klasik · Oda Müziği</p>
+            <p class="fiyat-price"><sup>₺</sup>5500</p>
+            <p class="fiyat-price-label">aylık · 4 ders</p>
+            <ul class="fiyat-includes">
+              <li>7 yaş ve üzeri</li>
+              <li>45 dakika bireysel ders</li>
+              <li>Deneme dersi ücretsiz</li>
+            </ul>
+            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
+          </article>
+
+          <!-- Klarnet -->
+          <article class="fiyat-card reveal" style="transition-delay:400ms;">
+            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M26 9V43" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M21.5 43C21.5 43 20 46 20 48H32C32 48 30.5 46 30.5 43" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M25 9C24.5 7.5 24.5 6 25.5 5C26.5 4 27.5 5 27.5 6C27.5 7 27 8.5 26 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="24" y1="13" x2="28" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="17" x2="28" y2="17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="26" cy="21" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <circle cx="26" cy="27" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <circle cx="26" cy="33" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <circle cx="26" cy="39" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
+              <path d="M23.5 23L21 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+              <path d="M23.5 29L21 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+            </svg>
+            <h3 class="fiyat-enstru">Klarnet</h3>
+            <p class="fiyat-desc">Klasik · Caz</p>
+            <p class="fiyat-price"><sup>₺</sup>5500</p>
+            <p class="fiyat-price-label">aylık · 4 ders</p>
+            <ul class="fiyat-includes">
+              <li>8 yaş ve üzeri</li>
+              <li>45 dakika bireysel ders</li>
+              <li>Deneme dersi ücretsiz</li>
+            </ul>
+            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. EĞİTMENLER
+    ============================================================ -->
+    <section id="egitmenler" class="section-pad" aria-label="Eğitmenler">
+      <div class="container">
+        <div class="egitmenler-inner">
+
+          <div class="egitmenler-left">
+            <span class="eyebrow">Kadromuz</span>
+            <h2 class="egitmenler-heading reveal">
+              Alanında Uzman<br>
+              <em>Eğitmenlerle</em><br>
+              Öğren
+            </h2>
+          </div>
+
+          <div class="egitmenler-cards">
+
+            <article class="egitmen-card reveal">
+              <div class="egitmen-avatar-wrap">
+                <div class="egitmen-initials" aria-hidden="true">SÇ</div>
+                <img class="egitmen-photo" src="img/egitmen-1.jpeg"
+                  alt="Seda Çiftçi"
+                  onload="this.previousElementSibling.style.display='none'"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="egitmen-card-body">
+                <p class="egitmen-instrument">Viyola &amp; Piyano</p>
+                <h3 class="egitmen-name">Seda Çiftçi</h3>
+                <p class="egitmen-bio">Yıldız Teknik Üniversitesi Müzik ve Sahne Sanatları mezunu (Viyola). Sedam Müzik Merkezi'nin kurucusu. Piyano, keman, bağlama ve viyola branşlarında her yaş grubuna bireysel müfredat hazırlayarak profesyonel düzeyde eğitim verir.</p>
+              </div>
+            </article>
+
+            <article class="egitmen-card reveal" style="transition-delay:80ms">
+              <div class="egitmen-avatar-wrap">
+                <div class="egitmen-initials" aria-hidden="true">MA</div>
+                <img class="egitmen-photo" src="img/egitmen-2.jpeg"
+                  alt="Mert Ali Akbaba"
+                  onload="this.previousElementSibling.style.display='none'"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="egitmen-card-body">
+                <p class="egitmen-instrument">Ud &amp; Gitar</p>
+                <h3 class="egitmen-name">Mert Ali Akbaba</h3>
+                <p class="egitmen-bio">YTÜ Sanat ve Tasarım Fakültesi Çalgı Bölümü (Ud) mezunu. Ana çalgısı ud; gitar, piyano ve bağlama da öğretiyor. Disiplinli çalışma anlayışı ve ustalarla süregelen müzikal gelişimiyle öğrencilerini temelden şekillendiriyor.</p>
+              </div>
+            </article>
+
+            <article class="egitmen-card reveal" style="transition-delay:160ms">
+              <div class="egitmen-avatar-wrap">
+                <div class="egitmen-initials" aria-hidden="true">DÇ</div>
+                <img class="egitmen-photo" src="img/egitmen-3.png"
+                  alt="Dilşat Çetinkaya"
+                  onload="this.previousElementSibling.style.display='none'"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="egitmen-card-body">
+                <p class="egitmen-instrument">Bağlama &amp; Kompozisyon</p>
+                <h3 class="egitmen-name">Dilşat Çetinkaya</h3>
+                <p class="egitmen-bio">9 yaşında bağlama çalarak müziğe başladı. Onur Kaçar ile bağlama eğitimini tamamlayan Çetinkaya, Aşık Veysel Güzel Sanatlar Lisesi'nden 2019'da mezun oldu. Yıldız Teknik Üniversitesi Sanat ve Tasarım Fakültesi'nde Kompozisyon ana sanat dalında lisans öğrenimi görmekte; aynı zamanda Shining Star programı kapsamında yüksek lisans dersleri almaktadır. Armoni eğitimini Uğur Gülbaharlı ve Turan Sağer, kontrpuan eğitimini Koray Sazlı ile tamamlamış; bestecilik çalışmalarını Uğur Gülbaharlı ve Koray Sazlı ile sürdürmektedir.</p>
+              </div>
+            </article>
+
+            <article class="egitmen-card reveal" style="transition-delay:240ms">
+              <div class="egitmen-avatar-wrap">
+                <div class="egitmen-initials" aria-hidden="true">AE</div>
+                <img class="egitmen-photo" src="img/egitmen-4.jpeg"
+                  alt="Ali Eren Öztürk"
+                  onload="this.previousElementSibling.style.display='none'"
+                  onerror="this.style.display='none'">
+              </div>
+              <div class="egitmen-card-body">
+                <p class="egitmen-instrument">Kanun &amp; Gitar</p>
+                <h3 class="egitmen-name">Ali Eren Öztürk</h3>
+                <p class="egitmen-bio">YTÜ Sanat ve Tasarım Fakültesi Kanun Bölümü mezunu. 8 yılı aşkın profesyonel müzik deneyimiyle kanun, gitar, kaval ve piyano öğretiyor. Sahne ve stüdyo birikimini derse yansıtarak öğrencilerin müzikal ifadesini güçlendiriyor.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. SHOWCASE
+    ============================================================ -->
+    <section id="showcase" class="section-pad" aria-label="Showcase">
+      <div class="hex-bg" aria-hidden="true"></div>
+      <div class="container showcase-inner">
+
+        <div class="showcase-top">
+          <h2 class="showcase-heading reveal">
+            DUYULMASI<br>GEREKEN
+            <em>Müzik.</em>
+          </h2>
+          <div class="showcase-right reveal" style="transition-delay:120ms">
+            <p class="showcase-text">
+              Sedam'da her ders bir performansa dönüşür.<br>
+              Öğrencilerimiz sahneye hazır yetişir.
+            </p>
+            <a href="#iletisim" class="btn-amber">Bize Katıl</a>
+          </div>
+        </div>
+
+        <div class="showcase-photos">
+          <div class="showcase-photo reveal">
+            <img src="img/showcase-1.jpg" alt="Sedam Müzik Merkezi ders anı" loading="lazy"
+              onload="this.classList.add('loaded')">
+          </div>
+          <div class="showcase-photo reveal" style="transition-delay:150ms">
+            <img src="img/showcase-2.jpg" alt="Sedam Müzik Merkezi ders anı" loading="lazy"
+              onload="this.classList.add('loaded')">
+          </div>
+          <div class="showcase-photo reveal" style="transition-delay:300ms">
+            <img src="img/showcase-3.jpg" alt="Sedam Müzik Merkezi ders anı" loading="lazy"
+              onload="this.classList.add('loaded')">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. İLETİŞİM
+    ============================================================ -->
+    <section id="iletisim" class="section-pad" aria-label="İletişim">
+      <div class="container">
+        <div class="iletisim-inner">
+
+          <!-- Left column -->
+          <div>
+            <span class="eyebrow">İletişim</span>
+            <h2 class="iletisim-heading reveal">
+              Bize<br><em>Ulaşın</em>
+            </h2>
+
+            <div class="iletisim-items reveal">
+              <div class="iletisim-item">
+                <div class="iletisim-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                      fill="currentColor"/>
+                    <circle cx="12" cy="9" r="2.5" fill="white"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="iletisim-item-label">Adres</p>
+                  <p class="iletisim-item-value">Avcılar, İstanbul</p>
+                </div>
+              </div>
+
+              <div class="iletisim-item">
+                <div class="iletisim-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24
+                      1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17
+                      0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                      fill="currentColor"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="iletisim-item-label">WhatsApp</p>
+                  <p class="iletisim-item-value">+90 534 016 48 65</p>
+                </div>
+              </div>
+
+              <div class="iletisim-item">
+                <div class="iletisim-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="20" height="20" rx="5"
+                      stroke="currentColor" stroke-width="1.8"/>
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="iletisim-item-label">Instagram</p>
+                  <p class="iletisim-item-value"><a href="https://www.instagram.com/sedammuzikmerkezi/" target="_blank" rel="noopener" style="color:inherit;">@sedammuzikmerkezi</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-box reveal" style="height:240px;padding:0;overflow:hidden;">
+              <iframe
+                src="https://maps.google.com/maps?q=Şht.+Erdoğan+Çabuk+Sk.+No:8/A+Üniversite+Mahallesi+Avcılar+İstanbul&output=embed&hl=tr&z=17"
+                width="100%" height="100%" style="border:0;" loading="lazy"
+                allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                title="Sedam Müzik Merkezi konumu">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Right column — Form -->
+          <div>
+            <form class="contact-form reveal" id="contact-form" novalidate
+              aria-label="İletişim formu"
+              name="iletisim" data-netlify="true">
+              <input type="hidden" name="form-name" value="iletisim">
+              <div class="form-field">
+                <label for="field-name">Adınız</label>
+                <input type="text" id="field-name" name="name"
+                  placeholder="Adınız Soyadınız"
+                  autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="field-phone">Telefon</label>
+                <input type="tel" id="field-phone" name="phone"
+                  placeholder="+90 5xx xxx xx xx"
+                  autocomplete="tel">
+              </div>
+              <div class="form-field">
+                <label for="field-message">Mesajınız</label>
+                <textarea id="field-message" name="message"
+                  placeholder="Hangi enstrümanı öğrenmek istediğinizi veya sorunuzu buraya yazabilirsiniz..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-dark">Gönder</button>
+
+              <div class="form-success" id="form-success" role="alert" aria-live="polite">
+                Mesajınız alındı. En kısa sürede sizinle iletişime geçeceğiz.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <p class="footer-logo-text">♪ SEDAM MÜZİK MERKEZİ</p>
+        <p class="footer-tagline">Müziğin kalbi Avcılar'da atar.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/sedammuzikmerkezi/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5"
+                stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="footer-social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Sedam Müzik Merkezi · Avcılar, İstanbul</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── NAV SCROLL STATE ──────────────────────────────────────────
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 56);
+    }, { passive: true });
+
+    // ── MOBILE MENU ───────────────────────────────────────────────
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && menuOpen) closeMenu();
+    });
+
+    // ── SCROLL REVEAL ─────────────────────────────────────────────
+    const revealItems = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -56px 0px'
+    });
+
+    revealItems.forEach(el => revealObserver.observe(el));
+
+    // ── CONTACT FORM ──────────────────────────────────────────────
+    const form       = document.getElementById('contact-form');
+    const successBox = document.getElementById('form-success');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = document.getElementById('field-name').value.trim();
+      if (!name) {
+        document.getElementById('field-name').focus();
+        return;
+      }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        form.querySelector('button[type="submit"]').style.display = 'none';
+        successBox.classList.add('show');
+        form.reset();
+        gtag('event', 'conversion', {'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr', 'value': 1.0, 'currency': 'TRY'});
+      })
+      .catch(() => {
+        form.querySelector('button[type="submit"]').style.display = 'none';
+        successBox.classList.add('show');
+        form.reset();
+        gtag('event', 'conversion', {'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr', 'value': 1.0, 'currency': 'TRY'});
+      });
+    });
+  </script>
+
+  <!-- WhatsApp Floating Button -->
+  <a id="whatsapp-btn"
+     href="https://wa.me/905340164865"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="WhatsApp ile hızlı bilgi al"
+     onclick="gtag('event', 'conversion', {'send_to': 'AW-11553345216/dsz5CPm6_qQcEMCdiIUr', 'value': 1.0, 'currency': 'TRY'})">
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.532 5.855L.073 23.927l6.254-1.641A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.501-5.187-1.378l-.371-.22-3.851 1.01 1.027-3.747-.242-.385A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+
+  <script>
+    (function () {
+      var video = document.getElementById('hero-video');
+      var ctas  = document.getElementById('hero-ctas');
+      var shown = false;
+      video.addEventListener('timeupdate', function () {
+        if (!shown && video.currentTime >= 14.5) {
+          ctas.classList.add('visible');
+          shown = true;
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
