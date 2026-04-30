@@ -1312,7 +1312,7 @@
          1. HERO
     ============================================================ -->
     <section id="hero" aria-label="Hero bölümü">
-      <video id="hero-video" src="hero-video.mp4" autoplay muted loop playsinline
+      <video id="hero-video" src="hero-video.mp4" autoplay muted loop playsinline preload="none"
         aria-hidden="true" tabindex="-1"></video>
       <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -2165,15 +2165,10 @@
 
   <script>
     (function () {
-      var video = document.getElementById('hero-video');
-      var ctas  = document.getElementById('hero-ctas');
-      var shown = false;
-      video.addEventListener('timeupdate', function () {
-        if (!shown && video.currentTime >= 14.5) {
-          ctas.classList.add('visible');
-          shown = true;
-        }
-      });
+      var ctas = document.getElementById('hero-ctas');
+      setTimeout(function () {
+        ctas.classList.add('visible');
+      }, 800);
     })();
   </script>
 
