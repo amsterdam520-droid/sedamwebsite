@@ -2140,13 +2140,25 @@
         form.querySelector('button[type="submit"]').style.display = 'none';
         successBox.classList.add('show');
         form.reset();
-        gtag('event', 'conversion', {'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr', 'value': 1.0, 'currency': 'TRY'});
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
+            'value': 1.0,
+            'currency': 'TRY'
+          });
+        }
       })
       .catch(() => {
         form.querySelector('button[type="submit"]').style.display = 'none';
         successBox.classList.add('show');
         form.reset();
-        gtag('event', 'conversion', {'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr', 'value': 1.0, 'currency': 'TRY'});
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
+            'value': 1.0,
+            'currency': 'TRY'
+          });
+        }
       });
     });
   </script>
