@@ -14,6 +14,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sedam Müzik Merkezi — Avcılar, İstanbul</title>
   <meta name="description" content="Sedam Müzik Merkezi — Avcılar'ın müzik okulu. Gitar, Piyano, Bağlama, Keman, Flüt ve Klarnet dersleri. 5 yaşından yetişkinlere.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicSchool",
+    "name": "Sedam Müzik Merkezi",
+    "description": "Avcılar'ın müzik okulu. Gitar, Piyano, Bağlama, Keman, Flüt ve Klarnet dersleri. 5 yaşından yetişkinlere.",
+    "url": "https://sedammuzik.com",
+    "telephone": "+905340164865",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Şht. Erdoğan Çabuk Sk. No:8/A Üniversite Mahallesi",
+      "addressLocality": "Avcılar",
+      "addressRegion": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.9791",
+      "longitude": "28.7212"
+    },
+    "sameAs": ["https://www.instagram.com/sedammuzikmerkezi/"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,300&display=swap" rel="stylesheet">
@@ -1028,7 +1065,8 @@
       color: rgba(28,26,24,0.45);
     }
     .form-field input,
-    .form-field textarea {
+    .form-field textarea,
+    .form-field select {
       font-family: 'DM Sans', sans-serif;
       font-size: 18px;
       font-weight: 300;
@@ -1040,11 +1078,23 @@
       outline: none;
       transition: border-color 0.2s, background 0.2s;
       resize: none;
+      width: 100%;
+      box-sizing: border-box;
     }
+    .form-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(28,26,24,0.45)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      cursor: pointer;
+    }
+    .form-field select option[value=""] { color: rgba(28,26,24,0.3); }
     .form-field input::placeholder,
     .form-field textarea::placeholder { color: rgba(28,26,24,0.3); }
     .form-field input:focus,
-    .form-field textarea:focus {
+    .form-field textarea:focus,
+    .form-field select:focus {
       border-color: var(--amber);
       background: rgba(239,159,39,0.04);
     }
@@ -2017,9 +2067,37 @@
                   autocomplete="tel">
               </div>
               <div class="form-field">
+                <label for="field-email">E-posta</label>
+                <input type="email" id="field-email" name="email"
+                  placeholder="ornek@mail.com"
+                  autocomplete="email">
+              </div>
+              <div class="form-field">
+                <label for="field-instrument">Hangi enstrümanı öğrenmek istiyorsunuz?</label>
+                <select id="field-instrument" name="instrument">
+                  <option value="">Seçiniz...</option>
+                  <option value="gitar">Gitar</option>
+                  <option value="piyano">Piyano</option>
+                  <option value="baglama">Bağlama / Saz</option>
+                  <option value="keman">Keman</option>
+                  <option value="flut">Flüt</option>
+                  <option value="klarnet">Klarnet</option>
+                  <option value="diger">Diğer</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="field-level">Seviyeniz</label>
+                <select id="field-level" name="level">
+                  <option value="">Seçiniz...</option>
+                  <option value="baslangic">Başlangıç (hiç bilmiyorum)</option>
+                  <option value="orta">Orta (biraz biliyorum)</option>
+                  <option value="ileri">İleri (devam ediyorum)</option>
+                </select>
+              </div>
+              <div class="form-field">
                 <label for="field-message">Mesajınız</label>
                 <textarea id="field-message" name="message"
-                  placeholder="Hangi enstrümanı öğrenmek istediğinizi veya sorunuzu buraya yazabilirsiniz..."></textarea>
+                  placeholder="Sormak istediğiniz bir şey varsa buraya yazabilirsiniz..."></textarea>
               </div>
 
               <button type="submit" class="btn-dark">Gönder</button>
@@ -2129,6 +2207,16 @@
       if (!name) {
         document.getElementById('field-name').focus();
         return;
+      }
+
+      // Gelişmiş Dönüşümler: kullanıcı verisini reset'ten önce al
+      const userEmail = (document.getElementById('field-email').value || '').trim();
+      const userPhone = (document.getElementById('field-phone').value || '').trim();
+      if (userEmail || userPhone) {
+        const userData = {};
+        if (userEmail) userData.email = userEmail;
+        if (userPhone) userData.phone_number = userPhone;
+        gtag('set', 'user_data', userData);
       }
 
       fetch('/', {
