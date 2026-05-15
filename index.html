@@ -2226,12 +2226,6 @@
       // Gelişmiş Dönüşümler: kullanıcı verisini reset'ten önce al
       const userEmail = (document.getElementById('field-email').value || '').trim();
       const userPhone = (document.getElementById('field-phone').value || '').trim();
-      if (userEmail || userPhone) {
-        const userData = {};
-        if (userEmail) userData.email = userEmail;
-        if (userPhone) userData.phone_number = userPhone;
-        gtag('set', 'user_data', userData);
-      }
 
       fetch('/', {
         method: 'POST',
@@ -2243,23 +2237,18 @@
         successBox.classList.add('show');
         form.reset();
         if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
+          const conversionData = {
             'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
             'value': 1.0,
             'currency': 'TRY'
-          });
-        }
-      })
-      .catch(() => {
-        form.querySelector('button[type="submit"]').style.display = 'none';
-        successBox.classList.add('show');
-        form.reset();
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
-            'value': 1.0,
-            'currency': 'TRY'
-          });
+          };
+          if (userEmail || userPhone) {
+            const userData = {};
+            if (userEmail) userData.email = userEmail;
+            if (userPhone) userData.phone_number = userPhone;
+            conversionData.user_data = userData;
+          }
+          gtag('event', 'conversion', conversionData);
         }
       });
     });
