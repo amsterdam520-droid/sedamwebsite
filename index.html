@@ -2065,9 +2065,10 @@
           <!-- Right column — Form -->
           <div>
             <form class="contact-form reveal" id="contact-form" novalidate
-              aria-label="İletişim formu"
-              name="iletisim" data-netlify="true">
-              <input type="hidden" name="form-name" value="iletisim">
+              aria-label="İletişim formu">
+              <input type="hidden" name="access_key" value="9258b02d-2dcb-4bf4-9bd2-3131593cbeaa">
+              <input type="hidden" name="subject" value="Sedam Müzik - Yeni İletişim Formu">
+              <input type="hidden" name="from_name" value="Sedam Müzik Web Sitesi">
               <div class="form-field">
                 <label for="field-name">Adınız</label>
                 <input type="text" id="field-name" name="name"
@@ -2226,41 +2227,43 @@
       // Gelişmiş Dönüşümler: kullanıcı verisini reset'ten önce al
       const userEmail = (document.getElementById('field-email').value || '').trim();
       const userPhone = (document.getElementById('field-phone').value || '').trim();
+
+      // Enhanced Conversions: user_data'yı hem global hem conversion event'e ekle
+      const conversionData = {
+        'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
+        'value': 1.0,
+        'currency': 'TRY'
+      };
       if (userEmail || userPhone) {
         const userData = {};
         if (userEmail) userData.email = userEmail;
         if (userPhone) userData.phone_number = userPhone;
         gtag('set', 'user_data', userData);
+        conversionData.user_data = userData;
       }
 
-      fetch('/', {
+      // Dönüşümü HEMEN kaydet (fetch sonucunu bekleme)
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', conversionData);
+      }
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
       })
-      .then(() => {
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success) console.warn('Web3Forms hata:', data.message);
         form.querySelector('button[type="submit"]').style.display = 'none';
         successBox.classList.add('show');
         form.reset();
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
-            'value': 1.0,
-            'currency': 'TRY'
-          });
-        }
       })
-      .catch(() => {
+      .catch(err => {
+        console.warn('Form gönderim hatası:', err);
         form.querySelector('button[type="submit"]').style.display = 'none';
         successBox.classList.add('show');
         form.reset();
-        if (typeof gtag === 'function') {
-          gtag('event', 'conversion', {
-            'send_to': 'AW-11553345216/yy64CKW__aQcEMCdiIUr',
-            'value': 1.0,
-            'currency': 'TRY'
-          });
-        }
       });
     });
   </script>
