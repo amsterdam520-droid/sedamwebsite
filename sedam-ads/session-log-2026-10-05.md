@@ -247,15 +247,50 @@ Cinsiyet **Kadın %57,58 / Erkek %42,59** — dengeli, dokunulmaz.
 **Uyarı:** bunlar hacim bazlı, değer bazlı değil. Yaş kırılımlı dönüşüm verisi yok ve zaten
 0 kayıt var. **Düşük öncelik** — cihaz ve takvim düzeltmesinden sonra yapılır.
 
-### 7d. Grup TBM'leri
+### 7d. Grup bazlı bütçe kaydırma — ⚠️ ilk öneri geçersiz
 
-| Grup | Mevcut TBM tavanı | **Yeni** | Gerekçe |
-|---|---|---|---|
-| 03 - Gitar | ₺18 | **₺12** | Bütçenin %31,5'i, ₺295,53/dönüşüm |
-| 07 - Nefesli | ₺18 | **₺22** | ₺68,08/dönüşüm, en yüksek TO, en az bütçe |
-| 01 - Marka | ₺18 | **₺6** | Marka kelimesine ₺21,12 TBM absürt |
-| 02 - Cocuk Sezon | ₺18 | **₺15** | ₺154'te 0 dönüşüm, TO iyi — izlemede |
-| Diğerleri | ₺18 | ₺18 | Dokunma |
+**İlk taslakta grup başına TBM tavanı önerilmişti (Gitar ₺12, Nefesli ₺22, Marka ₺6).
+Bu yapılamaz.** `Tıklama Maksimizasyonu` stratejisinde reklam grubu veya anahtar kelime
+seviyesinde manuel teklif **yoktur**; tek kontrol kampanya seviyesindeki
+**"maksimum TBM teklif sınırı"** (şu an ₺18). Kullanıcı 5 Ekim'de panelde bulamayınca çıktı.
+
+Kelime bazlı ekonomi (12 aktif gün):
+
+| Kelime | Grup | Maliyet | Tık | Ort. TBM | Dönş. | ₺/dönş. |
+|---|---|---|---|---|---|---|
+| `"gitar kursu"` | 03 - Gitar | **₺420,51** | 31 | ₺13,56 | 1 | **₺420,51** |
+| `"keman kursu"` | 05 - Keman | ₺286,99 | 23 | ₺12,48 | 3 | ₺95,66 |
+| `"saz kursu"` | 06 - Baglama | ₺211,36 | 20 | ₺10,57 | 1 | ₺211,36 |
+| `"gitar dersi"` | 03 - Gitar | ₺142,91 | 9 | ₺15,88 | 1 | ₺142,91 |
+| `"avcılar müzik kursu"` | 02 - Cocuk | ₺132,32 | 9 | ₺14,70 | 0 | — |
+| `"piyano kursu"` | 04 - Piyano | ₺116,25 | 11 | ₺10,57 | 1 | ₺116,25 |
+| `"bağlama kursu"` | 06 - Baglama | ₺111,91 | 10 | ₺11,19 | 2 | ₺55,96 |
+| `"keman dersi"` | 05 - Keman | ₺78,83 | 5 | ₺15,77 | 0 | — (düşük kalite) |
+| `"bağlama dersi"` | 06 - Baglama | ₺74,96 | 6 | ₺12,49 | 0 | — |
+| `"klarnet kursu"` | 07 - Nefesli | ₺63,24 | 4 | ₺15,81 | 0 | — |
+| `"sedam müzik merkezi"` | 01 - Marka | ₺42,23 | 2 | **₺21,12** | 0 | — |
+| `"flüt dersi"` | 07 - Nefesli | ₺34,52 | 2 | **₺17,26** | 0 | — |
+| `"yan flüt kursu"` | 07 - Nefesli | ₺24,60 | 3 | **₺8,20** | 2 | **₺12,30** |
+
+**`"gitar kursu"` tek başına bütçenin %22,4'ünü yiyor** (₺420,51), tek dönüşüm getirdi.
+`"yan flüt kursu"` ₺24,60'a 2 dönüşüm getirdi — 34 kat verimli.
+
+**Yapılabilir tek teklif müdahalesi: kampanya maks. TBM sınırı ₺18 → ₺14.**
+
+Gerekçe: kampanya ort. TBM'i zaten ₺12,85. ₺14 tavanı sadece pahalı kuyruğu keser —
+`"gitar kursu"` (₺13,56), `"gitar dersi"` (₺15,88), `"keman dersi"` (₺15,77),
+`"klarnet kursu"` (₺15,81), `"flüt dersi"` (₺17,26), `"sedam müzik merkezi"` (₺21,12).
+Ucuz ve dönüşüm getiren `"yan flüt kursu"` (₺8,20) ve `"saz kursu"` (₺10,57) etkilenmez.
+
+Yeni reklam takvimi ile birlikte etkin tavan da düşer: eski zirve `₺18 × 1,25 = ₺22,50`,
+yeni `₺14 × 1,15 = ₺16,10`.
+
+**`01 - Marka` için gerçek çözüm ayrı kampanya** (kendi bütçesi ve düşük TBM tavanıyla).
+17 gün kaldığı ve toplam ₺42,23 olduğu için **yapılmadı** — maliyeti faydasını aşıyor.
+
+**Kelime duraklatma yapılmadı.** 0 kayıt varken dönüşüm sayısı iyi/kötü kelimeyi ayırt
+edemiyor; `"gitar kursu"` en pahalı kalem ama en çok talep gören branş da olabilir.
+Kayıt verisi gelmeden kelime kesmek körlemesine olur.
 
 ### 7e. Teklif stratejisi — **GEÇME** (karar tekrarlandı)
 
@@ -279,17 +314,30 @@ harcamayı artırmak yanlış yön).
 
 ## 8. Panelde yapılacaklar — öncelik sırasıyla
 
-| # | İş | Yer | Öncelik |
+| # | İş | Yer | Durum (5 Eki) |
 |---|---|---|---|
-| 1 | Yayının döndüğünü doğrula (ödeme sonrası) | Kampanyalar → bugünkü gösterim | 🔴 |
-| 2 | `WhatsApp Tıklama` sayımı `Hepsini` → **`Bir`** | Hedefler → Dönüşümler | 🔴 |
-| 3 | Cihaz: mobil `-%20` → **0**, masaüstü `+%15` → **-%35** | Ayarlar → Cihazlar | 🔴 |
-| 4 | Reklam takvimi: 6 bandın yüzdelerini 7b tablosuna göre yaz | Ayarlar → Reklam takvimi | 🔴 |
-| 5 | Grup TBM'leri: Gitar ₺12, Nefesli ₺22, Marka ₺6, Çocuk ₺15 | Reklam grupları | 🟡 |
-| 6 | `Tıkla ve ara` dönüşümünü geri kur (telefon kör noktası) | Hedefler → Dönüşümler | 🟡 |
-| 7 | Demografi: 35-44 `+%10`, 45-54 `+%10` | Ayarlar → Demografi | 🟢 |
-| 8 | Değişiklik geçmişi CSV'si (arama kutusuna yaz) | — | 🟢 |
-| 9 | Optimizasyon önerilerini oku, bütçe artırma önerilerini reddet | Öneriler | 🟢 |
+| 1 | Yayının döndüğünü doğrula (ödeme sonrası) | Kampanyalar → bugünkü gösterim | ✅ |
+| 2 | `WhatsApp Tıklama` sayımı `Hepsini` → **`Bir`** | Hedefler → Dönüşümler | ⏳ bulunamadı |
+| 3 | Cihaz: mobil `-%20` → **0**, masaüstü `+%15` → **-%35** | arama kutusu → `Cihazlar` | ⏳ bulunamadı |
+| 4 | Reklam takvimi: 6 bandın yüzdeleri (7b) | Ayarlar → Reklam takvimi | ✅ |
+| 5 | ~~Grup TBM'leri~~ → **kampanya maks. TBM sınırı ₺18 → ₺14** | Ayarlar → Teklif verme | ⚠️ öneri değişti |
+| 6 | `Tıkla ve ara` dönüşümünü geri kur | Hedefler → Dönüşümler | ✅ |
+| 7 | Demografi: 35-44 `+%10`, 45-54 `+%10` | Ayarlar → Demografi | ✅ |
+| 8 | Değişiklik geçmişi CSV'si (arama kutusuna yaz) | — | ⏳ |
+| 9 | Optimizasyon önerilerini oku, bütçe artırma önerilerini reddet | Öneriler | ⏳ |
+
+### 2 ve 3'ün tam yolu
+
+**2 — WhatsApp sayımı**
+`Hedefler` → `Dönüşümler` → `Tüm dönüşümler` → **`WhatsApp Tıklama` adının üstüne tıkla**
+(satıra değil, mavi linke) → açılan sayfada **`Ayarları düzenle`** → **`Sayım`** satırı →
+`Düzenle` → **`Bir`** seç → `Bitti` → `Kaydet`.
+Geçmiş veri değişmez, bundan sonrası düzelir.
+
+**3 — Cihaz düzeltmesi**
+Menüde gezinme; **üstteki arama kutusuna `Cihazlar`** yaz, çıkan kampanya sayfasına git.
+Düzeltmenin **kampanya** seviyesinde olduğundan emin ol (reklam grubu değil).
+Mobil satırı `-%20` → `0`, Bilgisayar satırı `+%15` → `-%35`. Tabletlere dokunma.
 
 **Reklam takvimi uygulama notu:** tablo sanallaştırılmış, satırlar görünür alana gelmeden
 DOM'a girmiyor. Toplu düzenleme: satırları seç → mavi çubuk → `Düzenle → Teklif ayarlamalarını
