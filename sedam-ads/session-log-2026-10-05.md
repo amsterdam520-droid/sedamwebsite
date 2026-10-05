@@ -80,7 +80,8 @@ yaradı. Trafik kalitesi metrik olarak iyileşti, **iş sonucu değişmedi.**
 **3a. 11 dönüşümün 10'u tek işlemden, hem de `Sayım: Hepsini`.** Aynı kişinin her WhatsApp
 tıklaması ayrı sayılıyor. Gerçek kişi sayısı muhtemelen 4-6. `₺170,58/dönüşüm` kişi başı maliyet
 değil; gerçek kişi başı ≈ **₺300-450**.
-→ **Karar: `Bir`e çevrilecek** (kullanıcı onayladı 5 Ekim).
+→ **Karar: `Bir`e çevrildi — 5 Ekim'de panelde uygulandı ✅.** Geçmiş veri değişmez;
+9 Ekim kontrolünde dönüşüm sayısı düştüyse eski rakamın şişik olduğu doğrulanmış olur.
 
 **3b. Telefon tarafı tamamen kör.** `Tıkla ve ara` **kaldırılmış** — site içi `tel:` tıklamaları
 artık hiç sayılmıyor. `Reklamlardan sesli arama yapma` 25 Eylül'de Birincil yapılıp arama süresi
@@ -88,8 +89,9 @@ artık hiç sayılmıyor. `Reklamlardan sesli arama yapma` 25 Eylül'de Birincil
 
 **3c. Seda 5-6 telefon araması aldığını söylüyor, Ads bunların hiçbirini görmüyor.** İki açıklama:
 ya aramalar reklam arama uzantısından değil siteden numarayı görüp elle yapıldı (bu durumda
-`Tıkla ve ara` kaldırıldığı için ölçülmüyor), ya da organikten geldi. Ayrımı yapacak veri yok —
-`Tıkla ve ara` geri kurulmadan bu kör nokta kapanmaz.
+`Tıkla ve ara` kaldırıldığı için ölçülmüyor), ya da organikten geldi. Ayrımı yapacak veri yoktu.
+→ **`Tıkla ve ara` 5 Ekim'de geri kuruldu ✅** — kör nokta bundan sonrası için kapandı,
+20 Eyl – 5 Eki dönemi için kalıcı olarak ölçülemez.
 
 ---
 
@@ -317,27 +319,46 @@ harcamayı artırmak yanlış yön).
 | # | İş | Yer | Durum (5 Eki) |
 |---|---|---|---|
 | 1 | Yayının döndüğünü doğrula (ödeme sonrası) | Kampanyalar → bugünkü gösterim | ✅ |
-| 2 | `WhatsApp Tıklama` sayımı `Hepsini` → **`Bir`** | Hedefler → Dönüşümler | ⏳ bulunamadı |
-| 3 | Cihaz: mobil `-%20` → **0**, masaüstü `+%15` → **-%35** | arama kutusu → `Cihazlar` | ⏳ bulunamadı |
+| 2 | `WhatsApp Tıklama` sayımı `Hepsini` → **`Bir`** | Hedefler → Dönüşümler | ✅ |
+| 3 | Cihaz: mobil `-%20` → **0**, masaüstü `+%15` → **-%35** | arama kutusu → `Cihazlar` | ✅ |
 | 4 | Reklam takvimi: 6 bandın yüzdeleri (7b) | Ayarlar → Reklam takvimi | ✅ |
-| 5 | ~~Grup TBM'leri~~ → **kampanya maks. TBM sınırı ₺18 → ₺14** | Ayarlar → Teklif verme | ⚠️ öneri değişti |
+| 5 | ~~Grup TBM'leri~~ → kampanya maks. TBM sınırı ₺18 → ₺14 | Ayarlar → Teklif verme | ⏸️ ertelendi |
 | 6 | `Tıkla ve ara` dönüşümünü geri kur | Hedefler → Dönüşümler | ✅ |
 | 7 | Demografi: 35-44 `+%10`, 45-54 `+%10` | Ayarlar → Demografi | ✅ |
 | 8 | Değişiklik geçmişi CSV'si (arama kutusuna yaz) | — | ⏳ |
 | 9 | Optimizasyon önerilerini oku, bütçe artırma önerilerini reddet | Öneriler | ⏳ |
 
-### 2 ve 3'ün tam yolu
+### 5 neden ertelendi
 
-**2 — WhatsApp sayımı**
-`Hedefler` → `Dönüşümler` → `Tüm dönüşümler` → **`WhatsApp Tıklama` adının üstüne tıkla**
-(satıra değil, mavi linke) → açılan sayfada **`Ayarları düzenle`** → **`Sayım`** satırı →
-`Düzenle` → **`Bir`** seç → `Bitti` → `Kaydet`.
-Geçmiş veri değişmez, bundan sonrası düzelir.
+Ayar panelde bulunamadı. `Araçlar → Bütçeler ve teklifli sistem → Teklif stratejileri`
+**yanlış yer** — orası portföy stratejileri (hesap seviyesi, birden fazla kampanyayı tek
+stratejiye bağlamak için). Sedam standart strateji kullandığı için o ekran "Henüz teklif
+stratejiniz yok" diyor.
 
-**3 — Cihaz düzeltmesi**
-Menüde gezinme; **üstteki arama kutusuna `Cihazlar`** yaz, çıkan kampanya sayfasına git.
-Düzeltmenin **kampanya** seviyesinde olduğundan emin ol (reklam grubu değil).
-Mobil satırı `-%20` → `0`, Bilgisayar satırı `+%15` → `-%35`. Tabletlere dokunma.
+Doğru yer: kampanyanın kendi `Ayarlar` sayfasındaki katlanmış **Teklif verme** bölümü
+(reklam takvimiyle aynı sayfa), altında **"Maksimum tıklama başına maliyet teklif sınırı
+belirleyin"** onay kutusu. Doğrulanamadı.
+
+**Etki küçük:** kalan 17 günde tahmini ₺150-250. 0 kayıt probleminin yanında gürültü —
+bilinçli olarak kovalanmadı, 9 Ekim kontrolüne bırakıldı.
+
+### 5 Ekim'de uygulanan ayarların özeti
+
+| Ayar | Eski | Yeni |
+|---|---|---|
+| Ödeme | **Tıkalı** (2-5 Eki yayın yok) | **Çözüldü** |
+| Mobil teklif düzeltmesi | -%20 | **0** |
+| Masaüstü teklif düzeltmesi | +%15 | **-%35** |
+| Saat 07-12 | -%5 | **-%40** |
+| Saat 12-14 | 0 | **-%20** |
+| Saat 14-16 | +%15 | **0** |
+| Saat 16-19 | +%25 | **+%10** |
+| Saat 19-21 | +%10 | **+%15** |
+| Saat 21-23 | **-%20** | **+%15** |
+| Yaş 35-44 | +%20 | **+%10** |
+| Yaş 45-54 | — | **+%10** |
+| `WhatsApp Tıklama` sayımı | Hepsini | **Bir** |
+| `Tıkla ve ara` dönüşümü | Kaldırılmış | **Geri kuruldu** |
 
 **Reklam takvimi uygulama notu:** tablo sanallaştırılmış, satırlar görünür alana gelmeden
 DOM'a girmiyor. Toplu düzenleme: satırları seç → mavi çubuk → `Düzenle → Teklif ayarlamalarını
