@@ -148,7 +148,7 @@ Ekim harcaması ≈ ₺2.300, aylık tavan ₺4.560 → risk yok.
 
 ---
 
-## 8. Karar bekleyen tek konu: hacim mi verim mi
+## 8. Hacim mi verim mi — karar: hacim
 
 Kampanya bütçesinin ~%77'sini harcıyor, tıklama/gün 16,5'ten 10,3'e indi. Sezonun son 6 günü
 yılın en değerli trafiği (son kayıt günü yaklaşıyor). Ekonomik çerçeve 12 Ekim'den: CAC ₺1.797,
@@ -159,7 +159,25 @@ ilk ay cirosu 3,06x.
 | **Açık** | Maks. TBM **₺14 → ₺16**. Beklenen: TBM ~₺12-13, harcama ~₺150-180/gün, ~13 tık/gün. ₺18'e dönülmez (₺300 tavana yapışıyordu). |
 | **Dolu / az yer** | Dokunma. ₺116/gün ile sezonu kapat. |
 
-**Seda'dan cevap bekleniyor:** kontenjan durumu, 12-16 Eki yeni kayıt, kayıtların kaynağı.
+### ✅ Karar ve uygulama (16 Eki)
+
+Kullanıcı: **"kontenjan var sıkıntı yok, bol bol öğrenci lazım."** → hacim önceliği.
+
+**Maks. TBM sınırı `₺14 → ₺16` yapıldı** (kullanıcı panelde kaydetti, 16 Eki akşamı).
+Değişmeyenler: günlük bütçe ₺150 · mobil `-%20` · strateji `Tıklama Maks.`
+
+**19 Ekim karar kuralı** (17-18 Eki tam günlerine bak):
+
+| Günlük harcama | Aksiyon |
+|---|---|
+| < ₺130 | Tavan **₺17** |
+| ₺130 – ₺280 | Dokunma ✅ |
+| > ₺280 (₺300 tavana yapışma) | Tavan **₺15** |
+
+19 Ekim'de ilk iş: Ayarlar → Teklif verme'de **₺16,00 yazdığını yeniden doğrula**
+(12 Eki ders 2).
+
+Hâlâ açık (Seda): 12-16 Eki yeni kayıt var mı, kaynağı ne.
 
 ## 9. Sezon kapanışı — unutulmamalı
 
@@ -172,11 +190,13 @@ Plan (`eylul-2026-kampanya-plani.md`): "22 Ekim — bütçe kademeli normale çe
 | İş | Durum |
 |---|---|
 | Maks. TBM `₺14` etkisi | ✅ TBM ₺11,23 — ama hacim -%37 (§8) |
+| **Maks. TBM `₺16`** | ✅ 16 Eki uygulandı · ⏳ 19 Eki etkisi ölçülecek (§8 kural) |
 | Mobil `-%20` | ✅ |
 | Negatifler | ✅ sızıntı kapandı |
 | `Hemen Arayın` site bağlantısı | ✅ onaylandı, yayında |
-| **Kontenjan durumu (Seda)** | ⏳ §8 kararı buna bağlı |
+| Kontenjan durumu | ✅ açık — hacim önceliği |
 | **Yedek ödeme yöntemi** | ⏳ kullanıcı — 1 Kasım öncesi |
 | **23 Ekim: kampanyayı duraklat / bütçe düşür** | ⏳ |
+| **19 Ekim kontrolü** | ⏳ aralık 16-19 Eki: reklam grubu raporu + genel bakış ZIP + dönüşüm ekranı + bakiye |
 | 22 Ekim kapanış raporu | ⏳ Tam sezon (20 Eyl–22 Eki) raporları + `Reklam grubu raporu.csv` |
 | Gelecek sezon: branş açılış sayfaları, reklama özel numara | ⏳ |
