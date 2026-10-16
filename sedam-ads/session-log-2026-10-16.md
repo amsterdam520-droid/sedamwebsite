@@ -10,8 +10,7 @@ görüntüsündeki tarih seçiciden doğrulandı):
 genel bakış kartları ZIP (14 kart) · öğe ilişkilendirme raporu · `Tüm dönüşümler` ekran görüntüsü ·
 faturalandırma bakiyesi (kullanıcıdan, tek rakam).
 
-**Eksik:** `Reklam grubu raporu.csv`. Grup bazında yalnız `En büyük değişiklikler` kartı var
-(6 grup, maliyet + tıklama, 6-9 Eki karşılaştırmalı). TO/TBM grup bazında hesaplanamadı.
+`Reklam grubu raporu.csv` ilk turda eksikti, aynı gün sonradan geldi (§2).
 
 16 Ekim kısmi gün (rapor 16:10), oranlarda **13-15 Eki tam günleri** kullanıldı.
 
@@ -50,23 +49,34 @@ bir kısmı kaybedildi — gösterim %29 düştü, harcama yarıya indi. Doğru 
 
 ---
 
-## 2. Reklam grupları (13-16 Eki vs 6-9 Eki, `En büyük değişiklikler` kartı)
+## 2. Reklam grupları (`Reklam grubu raporu.csv`, 13-16 Eki)
 
-| Grup | Maliyet | Önceki | Tık | Önceki | TBM |
-|---|---|---|---|---|---|
-| 03 - Gitar | ₺141,20 | ₺158,23 | 12 | 9 | ₺11,77 |
-| 06 - Baglama | ₺121,55 | ₺418,17 | 12 | 29 | ₺10,13 |
-| 04 - Piyano | ₺30,79 | ₺177,25 | 3 | 9 | **₺10,26** ✅ |
-| 05 - Keman | ₺26,58 | ₺44,65 | 3 | 3 | ₺8,86 |
-| 07 - Nefesli | ₺8,78 | ₺82,15 | 1 | 6 | ₺8,78 |
-| 08 - Yetiskin | ₺0,00 | ₺24,94 | 0 | 2 | — |
+| Grup | Göstr. | Tık | TO | 5-12 Eki TO | Ort. TBM | Maliyet | Pay | Dönş. |
+|---|---|---|---|---|---|---|---|---|
+| 03 - Gitar | 103 | 12 | %11,65 | %8,28 | ₺11,77 | ₺141,20 | %37,9 | 0 |
+| **06 - Baglama** | 93 | 12 | **%12,90** | %11,76 | ₺10,13 | ₺121,55 | %32,7 | **2** |
+| 02 - Cocuk Sezon | 29 | 4 | **%13,79** | %12,50 | ₺10,82 | ₺43,27 | %11,6 | 0 |
+| 04 - Piyano | 54 | 3 | %5,56 | %9,00 | ₺10,26 ✅ | ₺30,79 | %8,3 | 0 |
+| 05 - Keman | 49 | 3 | %6,12 | %4,96 | ₺8,86 | ₺26,58 | %7,1 | 0 |
+| 07 - Nefesli | 18 | 1 | %5,56 | **%23,26** | ₺8,78 | ₺8,78 | %2,4 | 0 |
+| 01 - Marka | 22 | 0 | %0 | %12,50 | — | ₺0 | 0 | 0 |
+| 08 - Yetiskin | 2 | 0 | — | %40,00 | — | ₺0 | 0 | 0 |
+| **Toplam** | 370 | 35 | %9,46 | %10,29 | ₺10,63 | ₺372,17 | | 2 |
 
-Kartta olmayan ₺43 → `02 - Cocuk Sezon` (`çocuklar için müzik dersi` ₺24,21) + `01 - Marka`.
+6-9 Eki karşılaştırması (`En büyük değişiklikler` kartı): Bağlama ₺418 → ₺122, Piyano
+₺177 → ₺31, Nefesli ₺82 → ₺9, Gitar ₺158 → ₺141.
 
-- ✅ Piyano'nun ₺18,11'lik pahalı kuyruğu kesildi; tıklama başına ₺10.
-- Gitar tek büyüyen grup — tavan altında da rekabet edebiliyor.
-- Bağlama yarıdan fazla küçüldü, en çok hacim kaybeden grup.
-- Nefesli (12 Ekim'de en iyi TO) neredeyse sustu: 1 tıklama.
+- ✅ Piyano'nun ₺18,11'lik pahalı kuyruğu kesildi; TBM ₺10,26. Payı %19 → %8.
+- ✅ **2 WhatsApp dönüşümünün ikisi de `06 - Baglama`'dan** — maliyet/dönüşüm ₺60,78.
+  Bağlama hem en iyi TO'lu ikinci grup hem tek dönüşüm üreten grup.
+- Gitar TO %8,28 → %11,65 toparlandı, bütçenin en büyük payı.
+- Keman TO %4,96 → %6,12, hâlâ zayıf ama dibi gördü.
+- 🟡 **Nefesli çöktü:** TO %23,26 → %5,56, 18 gösterim. Tavan altında açık artırma
+  kaybediyor; n küçük (1 tık), yorum için yetersiz.
+- `01 - Marka` 22 gösterim, 0 tık — marka aramaları muhtemelen organik sonuca/haritaya
+  gidiyor. ₺0 harcadığı için sorun değil.
+- Bütçenin **%71'i Gitar + Bağlama**'da. Tavan kısıtı küçük grupları (Nefesli, Piyano, Keman)
+  daha sert vurmuş.
 
 Anahtar kelimelerde en iyi TO: `gitar kursu avcılar` %30, `avcılar müzik kursu` %22,
 `çocuklar için müzik dersi` %18, `saz kursu` %17 (9 tık, en çok tıklama).
