@@ -316,8 +316,31 @@ gürültüymüş. 45-54 (%19) düzeltmesiz duruyor, bakılmalı.
 | `klarnet kursu` | 7 | 1 | %14,29 | ₺12,26 | 0 |
 | **`yan flüt kursu`** | 4 | 1 | **%25,00** | **₺8,13** | **2** |
 
-**`yan flüt kursu`: ₺8,13'e 2 dönüşüm = dönüşüm başı ₺4,07.** Hesabın en verimli kelimesi,
-ama yalnız 4 gösterim almış. `gitar kursu` ₺103,46 ile en pahalı kalem, 0 dönüşüm.
+**`yan flüt kursu`: ₺8,13'e 2 dönüşüm.** `gitar kursu` ₺103,46 ile en pahalı kalem, 0 dönüşüm.
+
+### ⚠️ DÖNÜŞÜM ≠ KİŞİ — maliyet/dönüşüm rakamları bu yüzden iyimser
+
+`WhatsApp Tıklama` işleminin **`Sayım: Hepsini`** ayarı var — aynı kişinin her tıklaması ayrı
+dönüşüm sayılıyor. `Reklamlardan sesli arama yapma` da `Sayım: Her dönüşüm`.
+
+Dört dönüşümün kırılımı bunu açıkça gösteriyor:
+
+| Terim | Tıklama | Dönüşüm |
+|---|---|---|
+| `esenyurt keman kursu` | **1** | 2 |
+| `yan flüt kursu istanbul` | **1** | 2 |
+
+**İki tıklama, dört dönüşüm.** Yani web tarafında büyük ihtimalle **2 kişi** var, 4 değil.
+Bir kişi hem WhatsApp'a hem telefona basınca ya da WhatsApp'a iki kez basınca sayaç 2 artıyor.
+
+Bunun sonucu:
+- `₺146,08/dönüşüm` **kişi başı maliyet değil**. Kişi başı ≈ ₺584,30 ÷ 2 = **₺292**.
+- `yan flüt kursu` için "dönüşüm başı ₺4,07" yanıltıcı; doğrusu **1 kişi, ₺8,13**.
+- Buna karşılık **14 arama tıklaması hiç sayılmıyordu** (60 sn eşiği). Gerçek temas sayısı
+  4'ten de 2'den de yüksek, ama 25 Eylül öncesi için **ölçülemez** — kalıcı kör nokta.
+
+**Tek güvenilir sayı Seda'da:** 20-25 Eylül'de kaç kişi aradı, kaçı kayıt oldu.
+Ads bunu göremiyor. Kâr/zarar kararı o sayıyla verilir, maliyet/dönüşümle değil.
 
 ### Kelime durumu uyarıları
 
