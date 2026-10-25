@@ -479,132 +479,103 @@
       color: var(--amber);
     }
 
-    .dersler-grid {
+    .dersler-wrap {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: 400px 1fr;
+      gap: 24px;
+      align-items: start;
     }
 
-    .ders-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-      padding: 44px 36px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 520px;
-      transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s;
-      cursor: default;
+    /* Tek fiyat paneli */
+    .ders-paket {
+      position: sticky;
+      top: 110px;
+      background: rgba(196,181,232,0.06);
+      border: 1px solid rgba(196,181,232,0.28);
+      border-radius: 10px;
+      padding: 44px 40px;
     }
-    .ders-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(12,11,10,0.92) 35%, rgba(12,11,10,0.6) 70%, rgba(12,11,10,0.35) 100%);
-      border-radius: 8px;
-      z-index: 0;
-      transition: opacity 0.3s var(--ease);
+    .ders-paket-kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
     }
-    .ders-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--amber);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s var(--ease);
-      z-index: 2;
-    }
-    .ders-card:hover {
-      border-color: rgba(196,181,232,0.5);
-      transform: translateY(-7px);
-    }
-    .ders-card:hover::before {
-      opacity: 0.75;
-    }
-    .ders-card:hover::after { transform: scaleX(1); }
-    .ders-card > * { position: relative; z-index: 1; }
-
-    .ders-icon {
-      width: 52px;
-      height: 52px;
-      color: var(--amber);
-      margin-bottom: 28px;
-    }
-    .ders-name {
+    .ders-paket-for {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 44px;
-      font-weight: 600;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--amber);
+      margin-top: 6px;
+    }
+    .ders-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 88px;
+      font-weight: 700;
       color: var(--white);
       line-height: 1;
-      margin-bottom: 10px;
-    }
-    .ders-age {
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-    }
-    .ders-style {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-top: 8px;
-    }
-
-    .ders-price {
-      margin-top: auto;
-      padding-top: 28px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 44px;
-      font-weight: 700;
-      color: var(--amber);
-      line-height: 1;
       letter-spacing: -0.02em;
+      margin-top: 28px;
     }
     .ders-price sup {
-      font-size: 18px;
+      font-size: 32px;
       font-weight: 500;
       vertical-align: super;
       letter-spacing: 0;
-    }
-    .ders-price-label {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.60);
-      margin-top: 6px;
-      margin-bottom: 24px;
-    }
-    .ders-price-contact {
-      margin-top: auto;
-      padding-top: 28px;
-      margin-bottom: 24px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      font-weight: 600;
-      font-style: italic;
       color: var(--amber);
-      line-height: 1.3;
-      letter-spacing: 0.02em;
+    }
+    .ders-price small {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: rgba(255,255,255,0.6);
+    }
+    .ders-paket-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .ders-paket-chips span {
+      font-size: 12px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.8);
+    }
+    .ders-features {
+      list-style: none;
+      margin: 32px 0;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: grid;
+      gap: 12px;
+    }
+    .ders-features li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.4;
+    }
+    .ders-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-weight: 700;
     }
     .ders-cta {
-      display: inline-block;
-      align-self: flex-start;
+      display: block;
+      text-align: center;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       background: var(--amber);
-      color: var(--charcoal);
-      padding: 12px 28px;
+      color: var(--deep);
+      padding: 14px 28px;
       border-radius: 3px;
       border: 2px solid var(--amber);
       transition: background 0.2s, color 0.2s;
@@ -613,45 +584,81 @@
       background: transparent;
       color: var(--amber);
     }
-
-    .ders-features {
-      list-style: none;
-      margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 20px;
-      margin-top: 4px;
-    }
-    .ders-features li {
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.72);
-      padding-left: 20px;
-      position: relative;
-      line-height: 1.4;
-      transition: color 0.2s;
-    }
-    .ders-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--amber);
-      font-weight: 700;
-      transition: opacity 0.2s;
-    }
-    .ders-card:hover .ders-features li {
-      color: rgba(255,255,255,0.92);
-    }
-
-    .ders-instrument-note {
-      font-size: 11px;
-      font-weight: 300;
+    .ders-paket-note {
+      font-size: 12px;
       font-style: italic;
       color: rgba(255,255,255,0.55);
-      margin-top: 12px;
-      letter-spacing: 0.04em;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+    .ders-paket-note a { color: var(--amber); }
+
+    /* Enstrüman kutuları */
+    .dersler-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .ders-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      aspect-ratio: 4 / 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: border-color 0.25s;
+    }
+    .ders-tile::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,5,16,0.95) 20%, rgba(7,5,16,0.35) 65%, rgba(7,5,16,0.1));
+      transition: opacity 0.3s var(--ease);
+    }
+    .ders-tile > * { position: relative; }
+    .ders-tile:hover { border-color: rgba(196,181,232,0.5); }
+    .ders-tile:hover::before { opacity: 0.8; }
+    .ders-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+    }
+    .ders-meta {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    .ders-go {
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      transition: transform 0.25s var(--ease);
+    }
+    .ders-tile:hover .ders-go { transform: translateX(4px); }
+    .ders-tile > .ders-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(7,5,16,0.75);
+      border: 1px solid rgba(196,181,232,0.45);
+      color: var(--amber);
     }
 
     /* ============================================================
@@ -1293,7 +1300,8 @@
 
       .section-pad { padding: 88px 32px; }
 
-      .dersler-grid { grid-template-columns: repeat(2, 1fr); }
+      .dersler-wrap { grid-template-columns: 1fr; }
+      .ders-paket { position: static; }
 
       .neden-top { flex-direction: column; align-items: flex-start; }
       .neden-cols { grid-template-columns: 1fr; border-top: none; }
@@ -1325,7 +1333,13 @@
       .section-pad { padding: 72px 24px; }
       footer { padding: 56px 24px 40px; }
 
-      .dersler-grid { grid-template-columns: 1fr; }
+      .ders-paket { padding: 32px 24px; }
+      .ders-price { font-size: 68px; }
+      .dersler-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .ders-tile { padding: 16px; }
+      .ders-name { font-size: 28px; }
+      .ders-meta { font-size: 10px; letter-spacing: 0.1em; }
+      .ders-tile > .ders-badge { top: 10px; left: 10px; font-size: 10px; padding: 4px 8px; }
 
       .showcase-photos { grid-template-columns: 1fr; }
       .showcase-photo:nth-child(1) { height: 260px; }
@@ -1409,196 +1423,75 @@
           </h2>
         </div>
 
-        <div class="dersler-grid">
+        <div class="dersler-wrap">
 
-          <!-- Gitar -->
-          <article class="ders-card reveal" style="background-image:url('img/ders-gitar.jpg');background-size:cover;background-position:center;">
-            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M26 47C17.5 47 10 42 10 36C10 31.5 13.5 28 18 26.5C15.5 25 13 22.5 13 19.5C13 15 18.5 12 26 12C33.5 12 39 15 39 19.5C39 22.5 36.5 25 34 26.5C38.5 28 42 31.5 42 36C42 42 34.5 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="26" cy="33" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="21.5" y="40.5" width="9" height="1.8" rx="0.9" fill="currentColor" opacity="0.55"/>
-              <rect x="23" y="3" width="6" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="23" y1="7" x2="29" y2="7" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-              <line x1="23" y1="10" x2="29" y2="10" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-              <rect x="21" y="3" width="10" height="3" rx="1" stroke="currentColor" stroke-width="1"/>
-              <circle cx="22" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
-              <circle cx="30" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
-              <line x1="24.5" y1="7" x2="24.5" y2="41" stroke="currentColor" stroke-width="0.7" opacity="0.28"/>
-              <line x1="26" y1="7" x2="26" y2="41" stroke="currentColor" stroke-width="0.7" opacity="0.28"/>
-              <line x1="27.5" y1="7" x2="27.5" y2="41" stroke="currentColor" stroke-width="0.7" opacity="0.28"/>
-            </svg>
-            <h3 class="ders-name">Gitar</h3>
-            <p class="ders-age">6 yaş ve üzeri</p>
-            <p class="ders-style">Akustik · Klasik · Elektro</p>
-            <p class="ders-price"><sup>₺</sup>5500</p>
-            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
+          <!-- Tek fiyat paneli -->
+          <aside class="ders-paket reveal">
+            <p class="ders-paket-kicker">Aylık ders paketi</p>
+            <p class="ders-paket-for">Gitar · Piyano · Bağlama · Keman</p>
+            <p class="ders-price"><sup>₺</sup>5.500 <small>/ ay</small></p>
+            <div class="ders-paket-chips">
+              <span>4 ders</span>
+              <span>50 dk./ders</span>
+              <span>Birebir</span>
+            </div>
             <ul class="ders-features">
-              <li>Birebir Özel Ders</li>
               <li>Ücretsiz Deneme Dersi</li>
               <li>Nota &amp; Materyal Dahil</li>
               <li>Esnek Ders Saati Seçimi</li>
               <li>Merkezde Serbest Çalışma İmkanı</li>
             </ul>
-            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
-            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
-          </article>
+            <a href="#iletisim" class="ders-cta">Ücretsiz Deneme Dersi Al</a>
+            <p class="ders-paket-note">Flüt ve klarnet ücretleri eğitmene göre belirlenir. <a href="#iletisim">Enstrüman satın alma için de bilgi alın →</a></p>
+          </aside>
 
-          <!-- Piyano -->
-          <article class="ders-card reveal" style="transition-delay:80ms;background-image:url('img/ders-piyano.jpg');background-size:cover;background-position:center;">
-            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="3" y="16" width="46" height="30" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="9.6" y1="16" x2="9.6" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="16.1" y1="16" x2="16.1" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="22.7" y1="16" x2="22.7" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="29.3" y1="16" x2="29.3" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="35.9" y1="16" x2="35.9" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="42.4" y1="16" x2="42.4" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <rect x="7" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="13.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="27" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="33.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="40" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="3" y="10" width="46" height="7" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.05"/>
-            </svg>
-            <h3 class="ders-name">Piyano</h3>
-            <p class="ders-age">5 yaş ve üzeri</p>
-            <p class="ders-style">Klasik · Pop · Caz</p>
-            <p class="ders-price"><sup>₺</sup>5500</p>
-            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
-            <ul class="ders-features">
-              <li>Birebir Özel Ders</li>
-              <li>Ücretsiz Deneme Dersi</li>
-              <li>Nota &amp; Materyal Dahil</li>
-              <li>Esnek Ders Saati Seçimi</li>
-              <li>Merkezde Serbest Çalışma İmkanı</li>
-            </ul>
-            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
-            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
-          </article>
+          <div class="dersler-grid">
 
-          <!-- Bağlama -->
-          <article class="ders-card reveal" style="transition-delay:160ms;background-image:url('img/ders-baglama.jpg');background-size:cover;background-position:center;">
-            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="19" cy="38" rx="14" ry="11" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M29 30L45 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              <path d="M27.5 31L43.5 7" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
-              <line x1="31" y1="26.5" x2="36.5" y2="20.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
-              <line x1="33" y1="23.5" x2="38.5" y2="17.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
-              <line x1="35.5" y1="20" x2="41" y2="14" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
-              <path d="M43.5 7C43.5 7 46 5 47 7C48 9 46 11 43.5 7Z" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.2"/>
-              <circle cx="16" cy="37" r="3" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <path d="M9 35 Q19 29 29 34" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
-            </svg>
-            <h3 class="ders-name">Bağlama</h3>
-            <p class="ders-age">8 yaş ve üzeri</p>
-            <p class="ders-style">Türk Halk Müziği · Saz</p>
-            <p class="ders-price"><sup>₺</sup>5500</p>
-            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
-            <ul class="ders-features">
-              <li>Birebir Özel Ders</li>
-              <li>Ücretsiz Deneme Dersi</li>
-              <li>Nota &amp; Materyal Dahil</li>
-              <li>Esnek Ders Saati Seçimi</li>
-              <li>Merkezde Serbest Çalışma İmkanı</li>
-            </ul>
-            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
-            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
-          </article>
+            <!-- Gitar -->
+            <a href="#iletisim" class="ders-tile reveal" style="background-image:url('img/ders-gitar.jpg');">
+              <h3 class="ders-name">Gitar</h3>
+              <p class="ders-meta">6+ yaş · Akustik · Klasik · Elektro</p>
+              <span class="ders-go">Kayıt Ol →</span>
+            </a>
 
-          <!-- Keman -->
-          <article class="ders-card reveal" style="transition-delay:240ms;background-image:url('img/ders-keman.jpg');background-size:cover;background-position:center;">
-            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M26 47C20 47 15 43.5 15 39C15 35.5 17.5 33 21 31.5C18.5 30 16 27.5 16 24.5C16 20 19 17 26 17C33 17 36 20 36 24.5C36 27.5 33.5 30 31 31.5C34.5 33 37 35.5 37 39C37 43.5 32 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M20.5 25.5Q19 27 19 28.5Q19 30 20.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="20.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
-              <circle cx="20.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
-              <path d="M31.5 25.5Q33 27 33 28.5Q33 30 31.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="31.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
-              <circle cx="31.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
-              <path d="M21.5 32L24 31H28L30.5 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22.5 44.5H29.5L30.5 43H21.5L22.5 44.5Z" fill="currentColor" opacity="0.35"/>
-              <path d="M26 17C26 17 26 13 28 12C30 11 30 14 27 17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-              <line x1="25" y1="13" x2="24.5" y2="43" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
-              <line x1="26.5" y1="13" x2="26.5" y2="43" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
-              <line x1="28" y1="13" x2="27.5" y2="43" stroke="currentColor" stroke-width="0.7" opacity="0.22"/>
-            </svg>
-            <h3 class="ders-name">Keman</h3>
-            <p class="ders-age">5 yaş ve üzeri</p>
-            <p class="ders-style">Klasik · Orkestra</p>
-            <p class="ders-price"><sup>₺</sup>5500</p>
-            <p class="ders-price-label">aylık paket · 4 ders · 60 dk./ders</p>
-            <ul class="ders-features">
-              <li>Birebir Özel Ders</li>
-              <li>Ücretsiz Deneme Dersi</li>
-              <li>Nota &amp; Materyal Dahil</li>
-              <li>Esnek Ders Saati Seçimi</li>
-              <li>Merkezde Serbest Çalışma İmkanı</li>
-            </ul>
-            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
-            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
-          </article>
+            <!-- Piyano -->
+            <a href="#iletisim" class="ders-tile reveal" style="transition-delay:80ms;background-image:url('img/ders-piyano.jpg');">
+              <h3 class="ders-name">Piyano</h3>
+              <p class="ders-meta">5+ yaş · Klasik · Pop · Caz</p>
+              <span class="ders-go">Kayıt Ol →</span>
+            </a>
 
-          <!-- Flüt -->
-          <article class="ders-card reveal" style="transition-delay:320ms;background-image:url('img/ders-flut.jpg');background-size:cover;background-position:center;">
-            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M7 26H47" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="7" cy="26" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="46" y1="21" x2="46" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="14" cy="26" rx="2.2" ry="1.5" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="21" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="27" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="32" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="37" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <line x1="21" y1="21.5" x2="21" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
-              <line x1="27" y1="21.5" x2="27" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
-              <line x1="32" y1="21.5" x2="32" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
-              <line x1="37" y1="21.5" x2="37" y2="19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
-            </svg>
-            <h3 class="ders-name">Flüt</h3>
-            <p class="ders-age">7 yaş ve üzeri</p>
-            <p class="ders-style">Klasik · Oda Müziği</p>
-            <p class="ders-price-contact">Fiyat bilgisi için bize ulaşın</p>
-            <ul class="ders-features">
-              <li>Birebir Özel Ders</li>
-              <li>Ücretsiz Deneme Dersi</li>
-              <li>Nota &amp; Materyal Dahil</li>
-              <li>Esnek Ders Saati Seçimi</li>
-              <li>Merkezde Serbest Çalışma İmkanı</li>
-            </ul>
-            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
-            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
-          </article>
+            <!-- Bağlama -->
+            <a href="#iletisim" class="ders-tile reveal" style="transition-delay:160ms;background-image:url('img/ders-baglama.jpg');">
+              <h3 class="ders-name">Bağlama</h3>
+              <p class="ders-meta">8+ yaş · Türk Halk Müziği · Saz</p>
+              <span class="ders-go">Kayıt Ol →</span>
+            </a>
 
-          <!-- Klarnet -->
-          <article class="ders-card reveal" style="transition-delay:400ms;background-image:url('img/ders-klarnet.jpg');background-size:cover;background-position:center;">
-            <svg class="ders-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M26 9V43" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-              <path d="M21.5 43C21.5 43 20 46 20 48H32C32 48 30.5 46 30.5 43" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M25 9C24.5 7.5 24.5 6 25.5 5C26.5 4 27.5 5 27.5 6C27.5 7 27 8.5 26 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="24" y1="13" x2="28" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="24" y1="17" x2="28" y2="17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
-              <circle cx="26" cy="21" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <circle cx="26" cy="27" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <circle cx="26" cy="33" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <circle cx="26" cy="39" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <path d="M23.5 23L21 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
-              <path d="M23.5 29L21 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
-            </svg>
-            <h3 class="ders-name">Klarnet</h3>
-            <p class="ders-age">8 yaş ve üzeri</p>
-            <p class="ders-style">Klasik · Caz</p>
-            <p class="ders-price-contact">Fiyat bilgisi için bize ulaşın</p>
-            <ul class="ders-features">
-              <li>Birebir Özel Ders</li>
-              <li>Ücretsiz Deneme Dersi</li>
-              <li>Nota &amp; Materyal Dahil</li>
-              <li>Esnek Ders Saati Seçimi</li>
-              <li>Merkezde Serbest Çalışma İmkanı</li>
-            </ul>
-            <a href="#iletisim" class="ders-cta">Kayıt Ol</a>
-            <p class="ders-instrument-note">Enstrüman satın alma için bilgi alın →</p>
-          </article>
+            <!-- Keman -->
+            <a href="#iletisim" class="ders-tile reveal" style="transition-delay:240ms;background-image:url('img/ders-keman.jpg');">
+              <h3 class="ders-name">Keman</h3>
+              <p class="ders-meta">5+ yaş · Klasik · Orkestra</p>
+              <span class="ders-go">Kayıt Ol →</span>
+            </a>
 
+            <!-- Flüt -->
+            <a href="#iletisim" class="ders-tile reveal" style="transition-delay:320ms;background-image:url('img/ders-flut.jpg');">
+              <span class="ders-badge">Fiyat eğitmene göre</span>
+              <h3 class="ders-name">Flüt</h3>
+              <p class="ders-meta">7+ yaş · Klasik · Oda Müziği</p>
+              <span class="ders-go">Bilgi Al →</span>
+            </a>
+
+            <!-- Klarnet -->
+            <a href="#iletisim" class="ders-tile reveal" style="transition-delay:400ms;background-image:url('img/ders-klarnet.jpg');">
+              <span class="ders-badge">Fiyat eğitmene göre</span>
+              <h3 class="ders-name">Klarnet</h3>
+              <p class="ders-meta">8+ yaş · Klasik · Caz</p>
+              <span class="ders-go">Bilgi Al →</span>
+            </a>
+
+          </div>
         </div>
       </div>
     </section>
