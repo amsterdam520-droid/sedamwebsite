@@ -19,13 +19,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <meta name="description" content="Sedam Müzik Merkezi — Avcılar'ın müzik okulu. Gitar, Piyano, Bağlama, Keman, Flüt ve Klarnet dersleri. 5 yaşından yetişkinlere.">
+  <meta name="description" content="Sedam Müzik Merkezi — Avcılar'ın müzik okulu. Gitar, piyano, keman, bağlama, şan, ud, kanun, kaval, flüt ve klarnet birebir dersleri. Haftanın 7 günü 09:00–23:00. Saatlik oda kiralama.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MusicSchool",
     "name": "Sedam Müzik Merkezi",
-    "description": "Avcılar'ın müzik okulu. Gitar, Piyano, Bağlama, Keman, Flüt ve Klarnet dersleri. 5 yaşından yetişkinlere.",
+    "description": "Avcılar'ın müzik okulu. Gitar, piyano, keman, bağlama, şan, ud, kanun, kaval, flüt ve klarnet birebir dersleri. 5 yaşından yetişkinlere. Saatlik çalışma/prova odası kiralama.",
     "url": "https://sedammuzik.com",
     "telephone": "+905340164865",
     "address": {
@@ -44,16 +44,25 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens": "09:00",
-        "closes": "21:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday","Sunday"],
-        "opens": "09:00",
-        "closes": "21:00"
+        "closes": "23:00"
       }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Kaç yaşında müzik dersine başlanabilir?", "acceptedAnswer": {"@type": "Answer", "text": "Piyano ve kemana 5 yaşından itibaren başlanabilir; diğer enstrümanlar için uygun yaş ders kartlarında yazıyor. Yetişkinler için yaş sınırı yoktur."}},
+      {"@type": "Question", "name": "Hiç bilmiyorum, sıfırdan başlayabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Öğrencilerimizin çoğu sıfırdan başlıyor. Eğitmenimiz ilk derste seviyenizi görür ve size özel bir program hazırlar."}},
+      {"@type": "Question", "name": "Dersler grup mu, birebir mi?", "acceptedAnswer": {"@type": "Answer", "text": "Tüm derslerimiz birebir (özel ders) olarak işlenir. Bir ders 50 dakikadır, aylık pakette 4 ders vardır."}},
+      {"@type": "Question", "name": "Ders saatlerini nasıl belirliyoruz?", "acceptedAnswer": {"@type": "Answer", "text": "Merkezimiz haftanın 7 günü 09:00–23:00 arası açıktır. Ders saatini size uygun gün ve saate göre birlikte belirliyoruz."}},
+      {"@type": "Question", "name": "Deneme dersi ücretli mi?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır, ilk deneme dersi ücretsizdir. Formu doldurmanız ya da WhatsApp'tan yazmanız yeterli."}},
+      {"@type": "Question", "name": "Enstrüman almam gerekiyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Enstrüman almadan önce deneme dersine gelmenizi öneririz. Hangi enstrümanı, hangi bütçeyle almanız gerektiği konusunda sizi yönlendiriyoruz."}},
+      {"@type": "Question", "name": "Çalışma odası kiralayabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Müzisyenler ve eğitmenler için saatlik oda kiralıyoruz; ücreti saatlik 350₺'dir. Uygun saatler için WhatsApp'tan yazabilirsiniz."}}
     ]
   }
   </script>
@@ -134,7 +143,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 44px;
+      gap: 30px;
       list-style: none;
     }
     .nav-links a {
@@ -1193,6 +1202,204 @@
     }
 
     /* ============================================================
+       DİĞER BRANŞLAR (fotoğrafsız kompakt kutular)
+    ============================================================ */
+    .dersler-extra-title {
+      grid-column: 1 / -1;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-top: 12px;
+    }
+    .dersler-extra {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .ders-mini {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 150px;
+      padding: 22px;
+      border-radius: 10px;
+      background: linear-gradient(160deg, rgba(196,181,232,0.14), rgba(196,181,232,0.03));
+      border: 1px solid rgba(196,181,232,0.22);
+      transition: border-color 0.25s;
+    }
+    .ders-mini:hover { border-color: rgba(196,181,232,0.6); }
+    .ders-mini .ders-name { font-size: 30px; }
+    .ders-mini:hover .ders-go { transform: translateX(4px); }
+
+    /* ============================================================
+       ODA KİRALAMA
+    ============================================================ */
+    #kiralama { background: var(--cream); }
+    .kiralama-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 56px;
+      align-items: center;
+      border: 1px solid rgba(196,181,232,0.28);
+      border-radius: 14px;
+      padding: 56px;
+      background: rgba(196,181,232,0.05);
+    }
+    .kiralama-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 4.5vw, 64px);
+      font-weight: 600;
+      line-height: 0.98;
+      color: var(--charcoal);
+    }
+    .kiralama-heading em { font-style: italic; font-weight: 300; color: var(--amber); }
+    .kiralama-text {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(232,228,240,0.7);
+      margin-top: 22px;
+      max-width: 520px;
+    }
+    .kiralama-right { display: flex; flex-direction: column; gap: 22px; }
+    .kiralama-right .ders-price { margin-top: 0; }
+    .kiralama-right .ders-features { margin: 0; padding-top: 0; border-top: none; }
+
+    /* ============================================================
+       SSS
+    ============================================================ */
+    #sss { background: var(--deep); color: var(--white); }
+    .sss-wrap {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .sss-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 600;
+      line-height: 0.94;
+      color: var(--white);
+    }
+    .sss-heading em { font-style: italic; font-weight: 300; color: var(--amber); }
+    .sss-list { border-top: 1px solid rgba(255,255,255,0.1); }
+    .sss-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .sss-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .sss-item summary::-webkit-details-marker { display: none; }
+    .sss-item summary::after {
+      content: '+';
+      font-size: 26px;
+      font-weight: 300;
+      color: var(--amber);
+      transition: transform 0.25s var(--ease);
+      flex-shrink: 0;
+    }
+    .sss-item[open] summary::after { transform: rotate(45deg); }
+    .sss-item p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      padding: 0 40px 26px 0;
+    }
+    .sss-item p a { color: var(--amber); }
+
+    /* ============================================================
+       YORUMLAR — Google linki
+    ============================================================ */
+    .yorumlar-more { text-align: center; margin-top: 40px; }
+    .yorumlar-more a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      border-bottom: 1px solid rgba(196,181,232,0.4);
+      padding-bottom: 4px;
+    }
+
+    /* ============================================================
+       FORM — KVKK & HATA
+    ============================================================ */
+    .kvkk-check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.55;
+      color: rgba(232,228,240,0.7);
+    }
+    .kvkk-check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--amber);
+      flex-shrink: 0;
+    }
+    .kvkk-check a { color: var(--amber); text-decoration: underline; }
+    .kvkk-text {
+      display: none;
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(232,228,240,0.65);
+      background: rgba(232,228,240,0.04);
+      border: 1px solid rgba(232,228,240,0.1);
+      border-radius: 6px;
+      padding: 18px 20px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .kvkk-text.show { display: block; }
+    .kvkk-text strong { color: var(--charcoal); font-weight: 500; }
+    .kvkk-text p + p { margin-top: 10px; }
+    .form-hint {
+      display: none;
+      font-size: 14px;
+      color: #F2B8C6;
+    }
+    .form-hint.show { display: block; }
+    .form-error {
+      display: none;
+      background: rgba(242,184,198,0.08);
+      border: 1px solid rgba(242,184,198,0.45);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+    .form-error.show { display: block; }
+    .form-error a { color: var(--amber); text-decoration: underline; }
+
+    /* ============================================================
+       FOOTER — bilgi satırı
+    ============================================================ */
+    .footer-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 32px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 20px;
+    }
+    .footer-info a { color: inherit; }
+    .footer-info a:hover { color: var(--amber); }
+
+    /* ============================================================
        SCROLL REVEAL
     ============================================================ */
     .reveal {
@@ -1323,6 +1530,10 @@
       .showcase-photo:nth-child(3) { height: 280px; grid-column: span 2; }
 
       .iletisim-inner { grid-template-columns: 1fr; gap: 64px; }
+
+      .dersler-extra { grid-template-columns: repeat(2, 1fr); }
+      .kiralama-box { grid-template-columns: 1fr; gap: 36px; padding: 40px 32px; }
+      .sss-wrap { grid-template-columns: 1fr; gap: 40px; }
     }
 
     /* ============================================================
@@ -1350,6 +1561,13 @@
       .egitmenler-cards { grid-template-columns: 1fr; }
       .yorumlar-grid { grid-template-columns: 1fr; }
       .yorumlar-grid-bottom { grid-template-columns: 1fr; max-width: 100%; }
+
+      .dersler-extra { gap: 10px; }
+      .ders-mini { min-height: 130px; padding: 16px; }
+      .ders-mini .ders-name { font-size: 24px; }
+      .kiralama-box { padding: 32px 22px; }
+      .sss-item summary { font-size: 16px; }
+      .sss-item p { padding-right: 0; }
     }
   </style>
 </head>
@@ -1367,8 +1585,9 @@
 
     <ul class="nav-links" role="list">
       <li><a href="#dersler">Dersler & Fiyatlar</a></li>
-      <li><a href="#neden">Neden Sedam?</a></li>
+      <li><a href="#kiralama">Oda Kiralama</a></li>
       <li><a href="#egitmenler">Eğitmenler</a></li>
+      <li><a href="#sss">SSS</a></li>
       <li><a href="#iletisim">İletişim</a></li>
     </ul>
 
@@ -1383,8 +1602,10 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" role="dialog" aria-label="Mobil menü" aria-modal="true">
     <a href="#dersler" class="mobile-link" onclick="closeMenu()">Dersler & Fiyatlar</a>
-    <a href="#neden" class="mobile-link" onclick="closeMenu()">Neden Sedam?</a>
+    <a href="#kiralama" class="mobile-link" onclick="closeMenu()">Oda Kiralama</a>
     <a href="#egitmenler" class="mobile-link" onclick="closeMenu()">Eğitmenler</a>
+    <a href="#sss" class="mobile-link" onclick="closeMenu()">SSS</a>
+    <a href="#iletisim" class="mobile-link" onclick="closeMenu()">İletişim</a>
     <a href="#iletisim" class="mobile-cta btn-amber" onclick="closeMenu()">Deneme Dersi Al</a>
   </div>
 
@@ -1427,22 +1648,23 @@
 
           <!-- Tek fiyat paneli -->
           <aside class="ders-paket reveal">
-            <p class="ders-paket-kicker">Aylık ders paketi</p>
+            <p class="ders-paket-kicker">Aylık birebir ders paketi</p>
             <p class="ders-paket-for">Gitar · Piyano · Bağlama · Keman</p>
             <p class="ders-price"><sup>₺</sup>5.500 <small>/ ay</small></p>
             <div class="ders-paket-chips">
               <span>4 ders</span>
               <span>50 dk./ders</span>
-              <span>Birebir</span>
+              <span>Birebir (özel ders)</span>
             </div>
             <ul class="ders-features">
+              <li>Tüm Dersler Birebir — Sadece Siz ve Eğitmeniniz</li>
               <li>Ücretsiz Deneme Dersi</li>
               <li>Nota &amp; Materyal Dahil</li>
-              <li>Esnek Ders Saati Seçimi</li>
-              <li>Merkezde Serbest Çalışma İmkanı</li>
+              <li>Haftanın 7 Günü, 09:00–23:00 Arası Ders Saati</li>
+              <li>Merkezde Serbest Çalışma İmkânı</li>
             </ul>
             <a href="#iletisim" class="ders-cta">Ücretsiz Deneme Dersi Al</a>
-            <p class="ders-paket-note">Flüt ve klarnet ücretleri eğitmene göre belirlenir. <a href="#iletisim">Enstrüman satın alma için de bilgi alın →</a></p>
+            <p class="ders-paket-note">Flüt, klarnet, şan, ud, kanun ve kaval ücretleri eğitmene göre belirlenir; bilgi için bize ulaşın. <a href="#iletisim">Enstrüman satın alma için de bilgi alın →</a></p>
           </aside>
 
           <div class="dersler-grid">
@@ -1491,6 +1713,64 @@
               <span class="ders-go">Bilgi Al →</span>
             </a>
 
+            <p class="dersler-extra-title">Diğer branşlarımız</p>
+            <div class="dersler-extra">
+              <a href="#iletisim" class="ders-mini reveal" data-instrument="san">
+                <div>
+                  <h3 class="ders-name">Şan</h3>
+                  <p class="ders-meta">Ses eğitimi · Nefes · Repertuvar</p>
+                </div>
+                <span class="ders-go">Bilgi Al →</span>
+              </a>
+              <a href="#iletisim" class="ders-mini reveal" style="transition-delay:80ms" data-instrument="ud">
+                <div>
+                  <h3 class="ders-name">Ud</h3>
+                  <p class="ders-meta">Türk Sanat Müziği · Makam</p>
+                </div>
+                <span class="ders-go">Bilgi Al →</span>
+              </a>
+              <a href="#iletisim" class="ders-mini reveal" style="transition-delay:160ms" data-instrument="kanun">
+                <div>
+                  <h3 class="ders-name">Kanun</h3>
+                  <p class="ders-meta">Türk Sanat Müziği · Makam</p>
+                </div>
+                <span class="ders-go">Bilgi Al →</span>
+              </a>
+              <a href="#iletisim" class="ders-mini reveal" style="transition-delay:240ms" data-instrument="kaval">
+                <div>
+                  <h3 class="ders-name">Kaval</h3>
+                  <p class="ders-meta">Türk Halk Müziği</p>
+                </div>
+                <span class="ders-go">Bilgi Al →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2b. ODA KİRALAMA
+    ============================================================ -->
+    <section id="kiralama" class="section-pad" aria-label="Oda Kiralama">
+      <div class="container">
+        <div class="kiralama-box reveal">
+          <div>
+            <span class="eyebrow">Müzisyenler &amp; Eğitmenler İçin</span>
+            <h2 class="kiralama-heading">Saatlik çalışma<br><em>odası kirala.</em></h2>
+            <p class="kiralama-text">Kendi öğrencinize ders vermek, prova yapmak ya da sadece rahatça çalışmak için Avcılar'da saatlik oda kiralayabilirsiniz. Uygun saatleri WhatsApp'tan sorun, yerinizi ayırtalım.</p>
+          </div>
+          <div class="kiralama-right">
+            <p class="ders-price"><sup>₺</sup>350 <small>/ saat</small></p>
+            <ul class="ders-features">
+              <li>Haftanın 7 Günü, 09:00–23:00</li>
+              <li>Ders, Prova ve Bireysel Çalışma İçin</li>
+              <li>Merkezi Konum — Üniversite Mah., Avcılar</li>
+            </ul>
+            <a href="https://wa.me/905340164865?text=Merhaba%2C%20saatlik%20oda%20kiralama%20i%C3%A7in%20bilgi%20almak%20istiyorum."
+               target="_blank" rel="noopener noreferrer" class="ders-cta"
+               onclick="gtag('event', 'conversion', {'send_to': 'AW-11553345216/dsz5CPm6_qQcEMCdiIUr', 'value': 1.0, 'currency': 'TRY'})">WhatsApp'tan Saat Ayırt</a>
           </div>
         </div>
       </div>
@@ -1587,179 +1867,9 @@
             <span class="yorum-author">Abdullah Yaman</span>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5. FİYATLAR — removed, merged into #dersler above
-    ============================================================ -->
-    <section id="fiyatlar" class="section-pad" aria-label="Fiyatlar" style="display:none;">
-      <div class="container">
-        <div class="fiyatlar-header reveal">
-          <span class="eyebrow">Ücretlendirme</span>
-          <h2 class="fiyatlar-heading">
-            Müziğe adım atmak<br>
-            <em>çok daha kolay.</em>
-          </h2>
-        </div>
-
-        <div class="fiyatlar-grid">
-
-          <!-- Gitar -->
-          <article class="fiyat-card reveal">
-            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M26 47C17.5 47 10 42 10 36C10 31.5 13.5 28 18 26.5C15.5 25 13 22.5 13 19.5C13 15 18.5 12 26 12C33.5 12 39 15 39 19.5C39 22.5 36.5 25 34 26.5C38.5 28 42 31.5 42 36C42 42 34.5 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="26" cy="33" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-              <rect x="21.5" y="40.5" width="9" height="1.8" rx="0.9" fill="currentColor" opacity="0.55"/>
-              <rect x="23" y="3" width="6" height="11" rx="1" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="23" y1="7" x2="29" y2="7" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-              <line x1="23" y1="10" x2="29" y2="10" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-              <rect x="21" y="3" width="10" height="3" rx="1" stroke="currentColor" stroke-width="1"/>
-              <circle cx="22" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
-              <circle cx="30" cy="3.5" r="1.2" fill="currentColor" opacity="0.55"/>
-            </svg>
-            <h3 class="fiyat-enstru">Gitar</h3>
-            <p class="fiyat-desc">Akustik · Klasik · Elektro</p>
-            <p class="fiyat-price"><sup>₺</sup>5500</p>
-            <p class="fiyat-price-label">aylık · 4 ders</p>
-            <ul class="fiyat-includes">
-              <li>6 yaş ve üzeri</li>
-              <li>45 dakika bireysel ders</li>
-              <li>Deneme dersi ücretsiz</li>
-            </ul>
-            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
-          </article>
-
-          <!-- Piyano -->
-          <article class="fiyat-card reveal" style="transition-delay:80ms;">
-            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="3" y="16" width="46" height="30" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="9.6" y1="16" x2="9.6" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="16.1" y1="16" x2="16.1" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="22.7" y1="16" x2="22.7" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="29.3" y1="16" x2="29.3" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="35.9" y1="16" x2="35.9" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <line x1="42.4" y1="16" x2="42.4" y2="46" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <rect x="7" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="13.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="27" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="33.5" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="40" y="16" width="4.5" height="18" rx="1" fill="currentColor" opacity="0.75"/>
-              <rect x="3" y="10" width="46" height="7" rx="2" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.05"/>
-            </svg>
-            <h3 class="fiyat-enstru">Piyano</h3>
-            <p class="fiyat-desc">Klasik · Pop · Caz</p>
-            <p class="fiyat-price"><sup>₺</sup>5500</p>
-            <p class="fiyat-price-label">aylık · 4 ders</p>
-            <ul class="fiyat-includes">
-              <li>5 yaş ve üzeri</li>
-              <li>45 dakika bireysel ders</li>
-              <li>Deneme dersi ücretsiz</li>
-            </ul>
-            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
-          </article>
-
-          <!-- Bağlama -->
-          <article class="fiyat-card reveal" style="transition-delay:160ms;">
-            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="19" cy="38" rx="14" ry="11" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M29 30L45 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              <path d="M27.5 31L43.5 7" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
-              <line x1="31" y1="26.5" x2="36.5" y2="20.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
-              <line x1="33" y1="23.5" x2="38.5" y2="17.5" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
-              <line x1="35.5" y1="20" x2="41" y2="14" stroke="currentColor" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
-              <path d="M43.5 7C43.5 7 46 5 47 7C48 9 46 11 43.5 7Z" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.2"/>
-              <circle cx="16" cy="37" r="3" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-              <path d="M9 35 Q19 29 29 34" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
-            </svg>
-            <h3 class="fiyat-enstru">Bağlama</h3>
-            <p class="fiyat-desc">Türk Halk Müziği · Saz</p>
-            <p class="fiyat-price"><sup>₺</sup>5500</p>
-            <p class="fiyat-price-label">aylık · 4 ders</p>
-            <ul class="fiyat-includes">
-              <li>8 yaş ve üzeri</li>
-              <li>45 dakika bireysel ders</li>
-              <li>Deneme dersi ücretsiz</li>
-            </ul>
-            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
-          </article>
-
-          <!-- Keman -->
-          <article class="fiyat-card reveal" style="transition-delay:240ms;">
-            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M26 47C20 47 15 43.5 15 39C15 35.5 17.5 33 21 31.5C18.5 30 16 27.5 16 24.5C16 20 19 17 26 17C33 17 36 20 36 24.5C36 27.5 33.5 30 31 31.5C34.5 33 37 35.5 37 39C37 43.5 32 47 26 47Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M20.5 25.5Q19 27 19 28.5Q19 30 20.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="20.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
-              <circle cx="20.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
-              <path d="M31.5 25.5Q33 27 33 28.5Q33 30 31.5 30.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="31.5" cy="25" r="1" fill="currentColor" opacity="0.65"/>
-              <circle cx="31.5" cy="31" r="1" fill="currentColor" opacity="0.65"/>
-              <path d="M21.5 32L24 31H28L30.5 32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M22.5 44.5H29.5L30.5 43H21.5L22.5 44.5Z" fill="currentColor" opacity="0.35"/>
-              <path d="M26 17C26 17 26 13 28 12C30 11 30 14 27 17" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-            <h3 class="fiyat-enstru">Keman</h3>
-            <p class="fiyat-desc">Klasik · Orkestra</p>
-            <p class="fiyat-price"><sup>₺</sup>5500</p>
-            <p class="fiyat-price-label">aylık · 4 ders</p>
-            <ul class="fiyat-includes">
-              <li>5 yaş ve üzeri</li>
-              <li>45 dakika bireysel ders</li>
-              <li>Deneme dersi ücretsiz</li>
-            </ul>
-            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
-          </article>
-
-          <!-- Flüt -->
-          <article class="fiyat-card reveal" style="transition-delay:320ms;">
-            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M7 26H47" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="7" cy="26" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="46" y1="21" x2="46" y2="31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="14" cy="26" rx="2.2" ry="1.5" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="21" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="27" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="32" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-              <circle cx="37" cy="26" r="2.2" fill="currentColor" opacity="0.5"/>
-            </svg>
-            <h3 class="fiyat-enstru">Flüt</h3>
-            <p class="fiyat-desc">Klasik · Oda Müziği</p>
-            <p class="fiyat-price-label">Fiyat bilgisi için bize ulaşın</p>
-            <ul class="fiyat-includes">
-              <li>7 yaş ve üzeri</li>
-              <li>45 dakika bireysel ders</li>
-              <li>Deneme dersi ücretsiz</li>
-            </ul>
-            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
-          </article>
-
-          <!-- Klarnet -->
-          <article class="fiyat-card reveal" style="transition-delay:400ms;">
-            <svg class="fiyat-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M26 9V43" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
-              <path d="M21.5 43C21.5 43 20 46 20 48H32C32 48 30.5 46 30.5 43" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M25 9C24.5 7.5 24.5 6 25.5 5C26.5 4 27.5 5 27.5 6C27.5 7 27 8.5 26 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="24" y1="13" x2="28" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="24" y1="17" x2="28" y2="17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
-              <circle cx="26" cy="21" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <circle cx="26" cy="27" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <circle cx="26" cy="33" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <circle cx="26" cy="39" r="2.2" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.18"/>
-              <path d="M23.5 23L21 24" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
-              <path d="M23.5 29L21 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
-            </svg>
-            <h3 class="fiyat-enstru">Klarnet</h3>
-            <p class="fiyat-desc">Klasik · Caz</p>
-            <p class="fiyat-price-label">Fiyat bilgisi için bize ulaşın</p>
-            <ul class="fiyat-includes">
-              <li>8 yaş ve üzeri</li>
-              <li>45 dakika bireysel ders</li>
-              <li>Deneme dersi ücretsiz</li>
-            </ul>
-            <a href="#iletisim" class="btn-amber">Kayıt Ol</a>
-          </article>
-
-        </div>
+        <p class="yorumlar-more reveal">
+          <a href="https://www.google.com/maps/search/?api=1&query=Sedam+M%C3%BCzik+Merkezi+Avc%C4%B1lar" target="_blank" rel="noopener">Tüm yorumları Google'da gör →</a>
+        </p>
       </div>
     </section>
 
@@ -1790,7 +1900,7 @@
                   onerror="this.style.display='none'">
               </div>
               <div class="egitmen-card-body">
-                <p class="egitmen-instrument">Viyola &amp; Piyano</p>
+                <p class="egitmen-instrument">Piyano · Keman · Bağlama · Viyola</p>
                 <h3 class="egitmen-name">Seda Çiftçi</h3>
                 <p class="egitmen-bio">Yıldız Teknik Üniversitesi Müzik ve Sahne Sanatları mezunu (Viyola). Sedam Müzik Merkezi'nin kurucusu. Piyano, keman, bağlama ve viyola branşlarında her yaş grubuna bireysel müfredat hazırlayarak profesyonel düzeyde eğitim verir.</p>
               </div>
@@ -1805,7 +1915,7 @@
                   onerror="this.style.display='none'">
               </div>
               <div class="egitmen-card-body">
-                <p class="egitmen-instrument">Kanun &amp; Gitar</p>
+                <p class="egitmen-instrument">Kanun · Gitar · Kaval · Piyano</p>
                 <h3 class="egitmen-name">Ali Eren Öztürk</h3>
                 <p class="egitmen-bio">YTÜ Sanat ve Tasarım Fakültesi Kanun Bölümü mezunu. 8 yılı aşkın profesyonel müzik deneyimiyle kanun, gitar, kaval ve piyano öğretiyor. Sahne ve stüdyo birikimini derse yansıtarak öğrencilerin müzikal ifadesini güçlendiriyor.</p>
               </div>
@@ -1839,19 +1949,63 @@
 
         <div class="showcase-photos">
           <div class="showcase-photo reveal">
-            <img src="img/showcase-1.jpg" alt="Sedam Müzik Merkezi ders anı" loading="lazy"
+            <img src="img/showcase-1.jpg" alt="Çocuk öğrenci, eğitmeniyle birebir piyano dersinde — Sedam Müzik Merkezi Avcılar" loading="lazy"
               onload="this.classList.add('loaded')">
           </div>
           <div class="showcase-photo reveal" style="transition-delay:150ms">
-            <img src="img/showcase-2.jpg" alt="Sedam Müzik Merkezi ders anı" loading="lazy"
+            <img src="img/showcase-2.jpg" alt="Klasik gitarıyla gülümseyen çocuk öğrenci — Sedam gitar dersi" loading="lazy"
               onload="this.classList.add('loaded')">
           </div>
           <div class="showcase-photo reveal" style="transition-delay:300ms">
-            <img src="img/showcase-3.jpg" alt="Sedam Müzik Merkezi ders anı" loading="lazy"
+            <img src="img/showcase-3.jpg" alt="Eğitmen ve öğrenci piyano başında birebir derste — Sedam Müzik Merkezi" loading="lazy"
               onload="this.classList.add('loaded')">
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5b. SSS
+    ============================================================ -->
+    <section id="sss" class="section-pad" aria-label="Sık Sorulan Sorular">
+      <div class="container">
+        <div class="sss-wrap">
+          <div class="reveal">
+            <span class="eyebrow">Sık Sorulan Sorular</span>
+            <h2 class="sss-heading">Aklınıza<br><em>takılanlar</em></h2>
+          </div>
+          <div class="sss-list reveal" style="transition-delay:80ms">
+            <details class="sss-item">
+              <summary>Kaç yaşında müzik dersine başlanabilir?</summary>
+              <p>Piyano ve kemana 5 yaşından itibaren başlanabilir; diğer enstrümanlar için uygun yaş ders kartlarında yazıyor. Yetişkinler için yaş sınırı yok — müzik öğrenmek için asla geç değil.</p>
+            </details>
+            <details class="sss-item">
+              <summary>Hiç bilmiyorum, sıfırdan başlayabilir miyim?</summary>
+              <p>Evet. Öğrencilerimizin çoğu sıfırdan başlıyor. Eğitmeniniz ilk derste seviyenizi görür ve size özel bir program hazırlar.</p>
+            </details>
+            <details class="sss-item">
+              <summary>Dersler grup mu, birebir mi?</summary>
+              <p>Tüm derslerimiz birebir (özel ders) olarak işlenir. Bir ders 50 dakikadır, aylık pakette 4 ders vardır.</p>
+            </details>
+            <details class="sss-item">
+              <summary>Ders saatlerini nasıl belirliyoruz?</summary>
+              <p>Merkezimiz haftanın 7 günü 09:00–23:00 arası açık. Ders saatini size uygun gün ve saate göre birlikte belirliyoruz; okul ya da iş çıkışı da olur, hafta sonu da.</p>
+            </details>
+            <details class="sss-item">
+              <summary>Deneme dersi ücretli mi?</summary>
+              <p>Hayır, ilk deneme dersi ücretsiz. <a href="#iletisim">Formu doldurmanız</a> ya da <a href="https://wa.me/905340164865" target="_blank" rel="noopener noreferrer">WhatsApp'tan yazmanız</a> yeterli.</p>
+            </details>
+            <details class="sss-item">
+              <summary>Enstrüman almam gerekiyor mu?</summary>
+              <p>Enstrüman almadan önce deneme dersine gelmenizi öneririz. Hangi enstrümanı, hangi bütçeyle almanız gerektiği konusunda sizi yönlendiriyoruz.</p>
+            </details>
+            <details class="sss-item">
+              <summary>Çalışma odası kiralayabilir miyim?</summary>
+              <p>Evet. Müzisyenler ve eğitmenler için saatlik oda kiralıyoruz; ücreti saatlik 350₺. <a href="#kiralama">Detaylar ve rezervasyon →</a></p>
+            </details>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1880,7 +2034,20 @@
                 </div>
                 <div>
                   <p class="iletisim-item-label">Adres</p>
-                  <p class="iletisim-item-value">Avcılar, İstanbul</p>
+                  <p class="iletisim-item-value"><a href="https://www.google.com/maps/dir/?api=1&destination=%C5%9Eht.+Erdo%C4%9Fan+%C3%87abuk+Sk.+No%3A8%2FA+%C3%9Cniversite+Mahallesi+Avc%C4%B1lar+%C4%B0stanbul" target="_blank" rel="noopener" style="color:inherit;">Üniversite Mah. Şht. Erdoğan Çabuk Sk. No:8/A<br>Avcılar / İstanbul</a></p>
+                </div>
+              </div>
+
+              <div class="iletisim-item">
+                <div class="iletisim-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="iletisim-item-label">Çalışma Saatleri</p>
+                  <p class="iletisim-item-value">Her gün 09:00 – 23:00</p>
                 </div>
               </div>
 
@@ -1960,6 +2127,11 @@
                   <option value="keman">Keman</option>
                   <option value="flut">Flüt</option>
                   <option value="klarnet">Klarnet</option>
+                  <option value="san">Şan</option>
+                  <option value="ud">Ud</option>
+                  <option value="kanun">Kanun</option>
+                  <option value="kaval">Kaval</option>
+                  <option value="oda-kiralama">Oda kiralama</option>
                   <option value="diger">Diğer</option>
                 </select>
               </div>
@@ -1978,10 +2150,31 @@
                   placeholder="Sormak istediğiniz bir şey varsa buraya yazabilirsiniz..."></textarea>
               </div>
 
+              <label class="kvkk-check" for="field-kvkk">
+                <input type="checkbox" id="field-kvkk" name="kvkk_onay" value="Onaylandı">
+                <span><a href="#" id="kvkk-toggle" aria-controls="kvkk-text" aria-expanded="false">Aydınlatma Metni</a>'ni okudum; bilgilerimin başvuruma dönüş yapılması amacıyla işlenmesine ve bu kapsamda yurt dışındaki hizmet sağlayıcılara aktarılmasına açık rıza veriyorum.</span>
+              </label>
+
+              <div class="kvkk-text" id="kvkk-text">
+                <p><strong>KVKK Aydınlatma Metni</strong></p>
+                <p><strong>Veri sorumlusu:</strong> Sedam Müzik Merkezi — Üniversite Mah. Şht. Erdoğan Çabuk Sk. No:8/A, Avcılar / İstanbul.</p>
+                <p><strong>İşlenen veriler:</strong> Formda paylaştığınız ad-soyad, telefon, e-posta, enstrüman/seviye tercihi ve mesajınız.</p>
+                <p><strong>Amaç:</strong> Başvurunuza dönüş yapmak, deneme dersi ya da oda kiralama planlamak ve sorularınızı yanıtlamak. Verileriniz bu amaç dışında kullanılmaz, pazarlama listelerine eklenmez.</p>
+                <p><strong>Aktarım:</strong> Form içeriği, e-posta ile iletilmesi için form hizmeti sağlayıcımız Web3Forms aracılığıyla gönderilir. Reklamlarımızın etkinliğini ölçmek için e-posta ve telefon bilginiz, şifrelenmiş (karma) biçimde Google Ads'e iletilebilir. Bu hizmet sağlayıcıların sunucuları yurt dışında bulunabilir.</p>
+                <p><strong>Hukuki sebep:</strong> Talebinize dönüş yapılması (bir sözleşmenin kurulmasıyla doğrudan ilgili olması, KVKK m.5/2-c) ve yurt dışı aktarım için açık rızanız (KVKK m.9).</p>
+                <p><strong>Saklama:</strong> Başvuru bilgileri, talebiniz sonuçlandıktan sonra makul süre içinde silinir.</p>
+                <p><strong>Haklarınız:</strong> KVKK m.11 kapsamında verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini ya da silinmesini isteme ve itiraz etme haklarına sahipsiniz. Taleplerinizi yukarıdaki adrese yazılı olarak veya <a href="mailto:s3148615@gmail.com" style="color:var(--amber);">s3148615@gmail.com</a> adresine iletebilirsiniz.</p>
+              </div>
+
+              <p class="form-hint" id="form-hint" role="alert"></p>
+
               <button type="submit" class="btn-dark">Gönder</button>
 
-              <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
                 Mesajınız alındı. En kısa sürede sizinle iletişime geçeceğiz.
+              </div>
+              <div class="form-error" id="form-error" role="alert">
+                Mesajınız şu anda gönderilemedi. Lütfen tekrar deneyin ya da bize doğrudan <a href="https://wa.me/905340164865" target="_blank" rel="noopener noreferrer">WhatsApp'tan</a> yazın / <a href="tel:+905340164865">+90 534 016 48 65</a> numarasını arayın.
               </div>
             </form>
           </div>
@@ -2009,16 +2202,19 @@
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
             </svg>
           </a>
-          <a href="#" class="footer-social" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" stroke-linejoin="round"/>
+          <a href="https://wa.me/905340164865" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.532 5.855L.073 23.927l6.254-1.641A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.659-.501-5.187-1.378l-.371-.22-3.851 1.01 1.027-3.747-.242-.385A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
             </svg>
           </a>
         </div>
       </div>
-      <p class="footer-copy">© 2025 Sedam Müzik Merkezi · Avcılar, İstanbul</p>
+      <div class="footer-info">
+        <span>Üniversite Mah. Şht. Erdoğan Çabuk Sk. No:8/A, Avcılar / İstanbul</span>
+        <a href="tel:+905340164865">+90 534 016 48 65</a>
+        <span>Her gün 09:00 – 23:00</span>
+      </div>
+      <p class="footer-copy">© <span id="footer-year">2026</span> Sedam Müzik Merkezi · Avcılar, İstanbul</p>
     </div>
   </footer>
 
@@ -2078,12 +2274,59 @@
     const form       = document.getElementById('contact-form');
     const successBox = document.getElementById('form-success');
 
+    const errorBox   = document.getElementById('form-error');
+    const hintBox    = document.getElementById('form-hint');
+    const kvkkBox    = document.getElementById('field-kvkk');
+    const kvkkText   = document.getElementById('kvkk-text');
+    const kvkkToggle = document.getElementById('kvkk-toggle');
+
+    // Footer yılı
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // KVKK metnini aç/kapa
+    kvkkToggle.addEventListener('click', e => {
+      e.preventDefault();
+      const open = kvkkText.classList.toggle('show');
+      kvkkToggle.setAttribute('aria-expanded', open);
+    });
+
+    // Ders kutusuna tıklayınca formda enstrümanı seç
+    const instrumentMap = {
+      'Gitar': 'gitar', 'Piyano': 'piyano', 'Bağlama': 'baglama', 'Keman': 'keman',
+      'Flüt': 'flut', 'Klarnet': 'klarnet', 'Şan': 'san', 'Ud': 'ud', 'Kanun': 'kanun', 'Kaval': 'kaval'
+    };
+    document.querySelectorAll('.ders-tile, .ders-mini').forEach(tile => {
+      tile.addEventListener('click', () => {
+        const nameEl = tile.querySelector('.ders-name');
+        const val = nameEl && instrumentMap[nameEl.textContent.trim()];
+        if (val) document.getElementById('field-instrument').value = val;
+      });
+    });
+
+    function showHint(msg, focusEl) {
+      hintBox.textContent = msg;
+      hintBox.classList.add('show');
+      if (focusEl) focusEl.focus();
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault();
+      hintBox.classList.remove('show');
+      errorBox.classList.remove('show');
 
       const name = document.getElementById('field-name').value.trim();
       if (!name) {
-        document.getElementById('field-name').focus();
+        showHint('Lütfen adınızı yazın.', document.getElementById('field-name'));
+        return;
+      }
+      const phoneVal = document.getElementById('field-phone').value.trim();
+      const emailVal = document.getElementById('field-email').value.trim();
+      if (!phoneVal && !emailVal) {
+        showHint('Size dönebilmemiz için telefon ya da e-posta adresinizi yazın.', document.getElementById('field-phone'));
+        return;
+      }
+      if (!kvkkBox.checked) {
+        showHint('Devam etmek için Aydınlatma Metni onay kutusunu işaretleyin.', kvkkBox);
         return;
       }
 
@@ -2117,16 +2360,15 @@
       })
       .then(res => res.json())
       .then(data => {
-        if (!data.success) console.warn('Web3Forms hata:', data.message);
+        if (!data.success) throw new Error(data.message || 'Web3Forms hata');
         form.querySelector('button[type="submit"]').style.display = 'none';
         successBox.classList.add('show');
         form.reset();
       })
       .catch(err => {
+        // Gönderilemediyse "alındı" deme; ziyaretçiyi WhatsApp/telefona yönlendir
         console.warn('Form gönderim hatası:', err);
-        form.querySelector('button[type="submit"]').style.display = 'none';
-        successBox.classList.add('show');
-        form.reset();
+        errorBox.classList.add('show');
       });
     });
   </script>
