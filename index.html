@@ -1268,6 +1268,82 @@
     .kiralama-right .ders-features { margin: 0; padding-top: 0; border-top: none; }
 
     /* ============================================================
+       RESİTAL GALERİSİ
+    ============================================================ */
+    #resital { background: var(--cream); }
+    .resital-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+    .resital-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 600;
+      line-height: 0.94;
+      color: var(--charcoal);
+    }
+    .resital-heading em { font-style: italic; font-weight: 300; color: var(--amber); }
+    .resital-desc {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(232,228,240,0.65);
+      max-width: 420px;
+    }
+    .resital-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .resital-grid figure {
+      margin: 0;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #1a1722;
+      border: 1px solid rgba(232,228,240,0.07);
+    }
+    .resital-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s var(--ease);
+    }
+    .resital-cta {
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 14px;
+      background: linear-gradient(160deg, rgba(196,181,232,0.22), rgba(196,181,232,0.04));
+      border: 1px solid rgba(196,181,232,0.35);
+      transition: border-color 0.25s;
+    }
+    .resital-cta:hover { border-color: var(--amber); }
+    .resital-cta strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--white);
+    }
+    .resital-cta strong em { font-style: italic; font-weight: 300; color: var(--amber); }
+    .resital-cta span {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+    .resital-grid figure:hover img { transform: scale(1.03); }
+
+    /* ============================================================
        SSS
     ============================================================ */
     #sss { background: var(--deep); color: var(--white); }
@@ -1534,6 +1610,8 @@
       .dersler-extra { grid-template-columns: repeat(2, 1fr); }
       .kiralama-box { grid-template-columns: 1fr; gap: 36px; padding: 40px 32px; }
       .sss-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .resital-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .resital-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* ============================================================
@@ -1568,6 +1646,9 @@
       .kiralama-box { padding: 32px 22px; }
       .sss-item summary { font-size: 16px; }
       .sss-item p { padding-right: 0; }
+      .resital-grid { gap: 10px; }
+      .resital-cta { padding: 18px; }
+      .resital-cta strong { font-size: 26px; }
     }
   </style>
 </head>
@@ -1962,6 +2043,34 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5a. RESİTAL GALERİSİ
+    ============================================================ -->
+    <section id="resital" class="section-pad" aria-label="Resital">
+      <div class="container">
+        <div class="resital-header reveal">
+          <div>
+            <span class="eyebrow">Öğrenci Resitali</span>
+            <h2 class="resital-heading">Sahnede<br><em>Sedam</em></h2>
+          </div>
+          <p class="resital-desc">Öğrencilerimiz aylarca çalıştıklarını ailelerinin önünde sahnede çaldı. Kanundan kemana, piyanodan şana — her biriyle gurur duyuyoruz.</p>
+        </div>
+        <div class="resital-grid">
+          <figure class="reveal"><img src="img/resital-kanun.jpg" alt="Resitalde kanun çalan öğrenci, yanında Sedam Müzik Merkezi afişi" loading="lazy" width="1000" height="1333" style="object-position:30% center"></figure>
+          <figure class="reveal" style="transition-delay:60ms"><img src="img/resital-piyano.jpg" alt="Resitalde piyano çalan küçük öğrenci" loading="lazy" width="798" height="1400" style="object-position:center 60%"></figure>
+          <figure class="reveal" style="transition-delay:120ms"><img src="img/resital-keman.jpg" alt="Nota sehpası önünde keman çalan öğrenci" loading="lazy" width="888" height="1400" style="object-position:center 40%"></figure>
+          <figure class="reveal" style="transition-delay:180ms"><img src="img/resital-san.jpg" alt="Resitalde sahnede şarkı söyleyen küçük öğrenci" loading="lazy" width="1000" height="1333" style="object-position:60% 55%"></figure>
+          <figure class="reveal"><img src="img/resital-ogrenci-2.jpg" alt="Resital sonrası eğitmen ve keman öğrencisi Sedam afişinin önünde" loading="lazy" width="1000" height="1333"></figure>
+          <figure class="reveal" style="transition-delay:60ms"><img src="img/resital-ogrenci-3.jpg" alt="Resital sonrası eğitmen ve piyano öğrencisi birlikte gülümsüyor" loading="lazy" width="1000" height="1333"></figure>
+          <figure class="reveal" style="transition-delay:120ms"><img src="img/resital-ogrenci-1.jpg" alt="Resital sonrası eğitmen ve öğrencisi gitarın yanında" loading="lazy" width="1000" height="1333" style="object-position:center 55%"></figure>
+          <a href="#iletisim" class="resital-cta reveal" style="transition-delay:180ms">
+            <strong>Sıradaki sahne<br><em>senin.</em></strong>
+            <span>Ücretsiz deneme dersi →</span>
+          </a>
+        </div>
       </div>
     </section>
 
